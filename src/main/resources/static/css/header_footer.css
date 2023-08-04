@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+ 
+     font-family: 'TheJamsil3Regular';
+ 
+}
+
+
+@font-face {
+    font-family: 'TheJamsil3Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil3Regular.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+ }
+
+ ul,li{
+    list-style: none;
+ }
+
+
+ #header{
+   height: 80px;
+   margin: 0 auto;
+   
+ }
+
+ #headerwrap{
+   width: 1080px;
+   margin: 0 auto;
+   margin-top: 20px;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 2;
+ }
+
+ #header-left{
+   width: 280px;
+   float: left;
+ }
+
+ #header-left ul{
+   display: flex;
+   flex-direction: row;
+   margin-left: 20px;
+   line-height: 70px;
+ }
+
+ #header-left ul li{
+   margin-right: 20px;
+ }
+
+ #logowrap{
+   z-index: 1;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+ }
+
+ 
+ #logowrap img{
+   width: 120px;
+   height: 50px;
+}
+
+ #header-right{
+   width: 280px;
+   float: right;
+ }
+
+ #header-right ul{
+   display: flex;
+   flex-direction: row;
+   margin-right: 20px;
+   line-height: 70px;
+ }
+
+ #header-right ul li{
+   margin-left: 20px;
+ }
