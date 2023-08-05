@@ -6,130 +6,90 @@
 <head>
 <meta charset="UTF-8">
 <title>쇼핑 제품 상세 페이지</title>
-<link rel="stylesheet" type="text/css" href="css/prodView.css">
+<link rel="stylesheet" type="text/css" href="/css/prodView.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head> 
 <jsp:include page="header.jsp" />
+
 <body>
 
 <section>
 
-<div id="s_order_wrap" >
-	<div class="s_prod_wrap">
-	
-		<div class="img_wrap">
-			<div id="s_prod_detail_img_wrap" >
-			
-				<div class="s_prod_detail_img" >
-					<img style="width: 100px; height: 100px;" src="imgs/${vo.prodImg}">
-				</div>
-				
+<div id="content" >
+	<div id="wrap">
 
-				
-				<div class="s_prod_detail_img" >
-					<img style="width: 100px; height: 100px;"src="imgs/${vo.prodImg2}" >
-				</div>
-
-				
-			</div>
-			
-			<div id="s_prod_big_img" >
-				<img style="width: 500px; height: 500px;" src="imgs/${vo.prodImg}">
-				<div id="square"></div>
-			</div>
-		</div>
-		
-		<div class="prod_info_wrap" >
-		
-			<div class="info_heading_wrap" >
-				 
-				<h2><input class="input-border-none" id="prod_name" name="prod_name" value="${vo.prodName}" readonly="readonly" > </h2>
-				
-				<div class="info_heading_desc" style="font-style: inherit; font-size: smaller;" ></div>
-		
-			</div>
-			
-			
-			
-			<form action="/cart" id ="myForm" method="post" >  
-
-				<% String memid = (String)session.getAttribute("id"); %>
-			
-				
-				<input type="hidden" name = "cartProdNum" value = "${vo.prodNum}">
-				<input type="hidden" name = "cartMemId" value = "<%=memid%>" >
-			
-			<table>
-				<tr>
-					<th><%= "&#8361;" %></th>
-					
-					<td>
-						<span>
-							<input class="input-border-none" id="prod_price" name="cartProdPri" value="${vo.prodPrice}" readonly="readonly" >
-						</span>
-					</td>
-					
-				</tr>
-			</table>
-
-			<div class="total_prod_wrap">
-			
-				<p id="prod_name2" ></p>
-				
-				<div id="quantity_wrap">
-				
-					<input type="text" id="quantity" class="qunt_up" name="cartProdQaun" value="1" min="1">
-					
-						<div id="count_btn_wrap" >
-							<a href="#" onclick="increaseQuantity(event)">
-							  <img src="/img/btn_count_up.gif">
-							</a>
-							
-							<a href="#" onclick="decreaseQuantity(event)">
-							  <img src="/img/btn_count_down.gif">
-							</a>
-
-						</div>
-				</div>
-			</div>
-
-			<div class="total_price_wrap">
-				<div id="total_price">
-				
-					<input class="input-border-none" id="prod_total_price" name="prodTotalPrice" value="TOTAL" readonly="readonly" > 
-				</div>
-			</div>
-
-		
-			<div class="prod_button" >
-
-					<div id="modal" style="display: none;">
-					  <p>장바구니에 추가하였습니다.</p>
-					  <button onclick="closeModal()">쇼핑 계속하기</button>
-					  <button onclick="goToCart()">장바구니로 이동</button>
+		<section id="sliderType01">
+			<div class="slider__wrap">
+				<div class="slider__img">
+					<div class="slider__btn">
+						<a href="#" class="prev" role="button" aria-label="왼쪽 이미지"><</a>
+						<a href="#" class="next" role="button" aria-label="오른쪽 이미지">></a>
 					</div>
-
-				<a onclick="payfunction()" class="prod_buy" >구매하기</a>
-
+					<div class="slider__inner">
+						<div class="slider" role="group" aria-label="1/9">
+							<img style="width: 500px; height: 500px;" src="imgs/${vo.prodImg}" alt="이미지1" />
+						</div>
+						<div class="slider" role="group" aria-label="2/9">
+							<img style="width: 500px; height: 500px;" src="imgs/${vo.prodImg}" alt="이미지2" />
+						</div>
+						<div class="slider" role="group" aria-label="3/9">
+							<img  style="width: 500px; height: 500px;"src="imgs/${vo.prodImg}" alt="이미지3" />
+						</div>
+						<!-- <div class="slider" role="group" aria-label="4/9">
+							<img src="../assets/img/effect_img03.jpg" alt="이미지4" />
+						</div>
+						<div class="slider" role="group" aria-label="5/9">
+							<img src="../assets/img/effect_img07.jpg" alt="이미지5" />
+						</div>
+						<div class="slider" role="group" aria-label="6/9">
+							<img src="../assets/img/effect_img08.jpg" alt="이미지6" />
+						</div>
+						<div class="slider" role="group" aria-label="7/9">
+							<img src="../assets/img/effect_img01.jpg" alt="이미지7" />
+						</div>
+						<div class="slider" role="group" aria-label="8/9">
+							<img src="../assets/img/effect_img10.jpg" alt="이미지8" />
+						</div>
+						<div class="slider" role="group" aria-label="9/9">
+							<img src="../assets/img/effect_img05.jpg" alt="이미지9" />
+						</div> -->
+					</div>
+				</div>
 				
 			</div>
-			</form>
-			
+		</section>
+		<script src="/js/prodView.js"></script>
 
+		<section id="right" >
+			<div class="prod-wrap" >
+				<div class="prod-info" >
+					<div id="prod-name" ><p>${vo.prodName}</p> </div>
+					<div id="prod-price"><p>${vo.prodPrice}</p> </div>
+					<div id="prod-content"><p>${vo.prodContent}</p> </div>
 				</div>
-					
-				</div>		
-		
-		</div>
-		
-	</div>
 
+			</div>
+
+			<div id="button-wrap" >
+				<div class="buttons" >
+					<button>add to bag</button>
+					<button><a href="/order?prodNum=${vo.prodNum}">order</a></button>
+				</div>
+			</div>
+
+
+		</section>
+
+		
+		
+
+	</div>	
 </div>
 
-
-
 </section>
-
 
 </body>
 

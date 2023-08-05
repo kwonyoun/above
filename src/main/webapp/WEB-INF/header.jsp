@@ -8,15 +8,10 @@
    <title>above</title>
    
    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
-   
-
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
-   <script src="js/slick-1.8.1/slick/slick.min.js"></script>
-  <script src="js/header_menu.js"></script>
-
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- <script src="js/header_menu.js"></script> -->
 
 </head>
-<header>
    <div id="header" >
 
       <div id="headerwrap" >
@@ -56,6 +51,4 @@
          <% } %>
       </div>
    </div>
-
-</header>
 </html>
