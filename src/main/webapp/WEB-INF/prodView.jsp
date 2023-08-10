@@ -7,8 +7,10 @@
 <meta charset="UTF-8">
 <title>쇼핑 제품 상세 페이지</title>
 <link rel="stylesheet" type="text/css" href="/css/prodView.css">
+<link rel="stylesheet" type="text/css" href="/css/cart.css">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/cart.js"></script>
 
 
 </head> 
@@ -71,11 +73,23 @@
 					<div id="prod-content"><p>${vo.prodContent}</p> </div>
 				</div>
 
+				<div class="subdiv">
+					<div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="${vo.prodPrice}">${vo.prodPrice}원</div>
+					<div class="num">
+						<div class="updown">
+							<input type="text" name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num" value="1" onkeyup="javascript:basket.changePNum(1);">
+							<span onclick="javascript:basket.changePNum(1);"><i class="fas fa-arrow-alt-circle-up up"></i></span>
+							<span onclick="javascript:basket.changePNum(1);"><i class="fas fa-arrow-alt-circle-down down"></i></span>
+						</div>
+					</div>
+					<div class="sum">${vo.prodPrice}원</div>
+				</div>
+
 			</div>
 
 			<div id="button-wrap" >
 				<div class="buttons" >
-					<button>add to bag</button>
+					<button><a href="/cart?prodNum=${vo.prodNum}">add to bag</a></button>
 					<button><a href="/order?prodNum=${vo.prodNum}">order</a></button>
 				</div>
 			</div>

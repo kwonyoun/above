@@ -190,3 +190,26 @@
 
 /* button-wrap */
 
+/*/////////////////////////////////////////////////////////*/
+/* 수량 변경 버튼  */
+
+.basketdiv .num {
+    height: 60px;
+    line-height: 60px;
+}
+
+.basketdiv .data .num .updown {
+    color: #0075ff;
+    font-size: 2em;
+    letter-spacing: -5px;
+}
+
+.fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}

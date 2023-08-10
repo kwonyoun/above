@@ -27,14 +27,15 @@ public class OrderController {
         System.out.println("prodNum: "+prodNum);
 
         MemVO memVO = svc.selectMeminfo(id);
-        String mm =memVO.getMemMobile();
-        String[] mobile = mm.split("/");
+
+        String mb =memVO.getMemMobile();
+        String[] mobile = mb.split("/");
         memVO.setMemMobile1(mobile[0]);
         memVO.setMemMobile2(mobile[1]);
         memVO.setMemMobile3(mobile[2]);
 
-        String aa = memVO.getMemAddr();
-        String [] addr = aa.split("/");
+        String ad = memVO.getMemAddr();
+        String [] addr = ad.split("/");
         memVO.setMemAddr1(addr[0]);
         memVO.setMemAddr2(addr[1]);
         memVO.setMemAddr3(addr[2]);

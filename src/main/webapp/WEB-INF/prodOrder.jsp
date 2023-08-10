@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>결제하기</title>
 
-<link rel="stylesheet" href="/css/shopping_order.css">
+<link rel="stylesheet" href="/css/order.css">
 <script	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 
 <!-- jQuery -->
@@ -122,10 +122,10 @@
 							<tbody>					
 											
 								<tr>
-									<td><img style="width: 95px; height: 85px; text-align: left; " alt="prod_img" src="img/${ProdVO.prodImg}"></td>
+									<td><img style="width: 95px; height: 85px; text-align: left; " alt="prod_img" src="imgs/${ProdVO.prodImg}"></td>
 									<td></td>
 									<td>${ProdVO.prodPrice}</td>
-									<td>${ordQuan}</td>
+									<td></td>
 									<td></td>
 								</tr>
 
@@ -156,7 +156,7 @@
 
 				</select>
 				
-				<script>
+				<!-- <script>
 	            $(function(){
 	                      $('#newAddrSelect').on("change",function(){
 	                         var option = $(this).val(); //<select>태그 내에서 선택된 옵션의 값을 가져옴
@@ -178,15 +178,15 @@
 	                         // mem_name/mem_mobile1/mem_mobile2/mem_mobile3/sample6_postcode/....이하생략
 	                         //이런식으로 받아왔을 경우
 
-	                         var remark = re.split("/");
-	                          document.getElementById("mem_name_input").value = remark[2];
-	                          document.getElementById("mem_mobile1_input").value = remark[7];
-	                          document.getElementById("mem_mobile2_input").value = remark[8];
-	                          document.getElementById("mem_mobile3_input").value = remark[9];
-	                          document.getElementById("sample6_postcode").value = remark[3];
-	                          document.getElementById("sample6_address").value = remark[4];
-	                          document.getElementById("sample6_detailAddress").value = remark[5];
-	                          document.getElementById("sample6_extraAddress").value = remark[6];
+	                        //  var remark = re.split("/");
+	                        //   document.getElementById("mem_name_input").value = remark[2];
+	                        //   document.getElementById("mem_mobile1_input").value = remark[7];
+	                        //   document.getElementById("mem_mobile2_input").value = remark[8];
+	                        //   document.getElementById("mem_mobile3_input").value = remark[9];
+	                        //   document.getElementById("sample6_postcode").value = remark[3];
+	                        //   document.getElementById("sample6_address").value = remark[4];
+	                        //   document.getElementById("sample6_detailAddress").value = remark[5];
+	                        //   document.getElementById("sample6_extraAddress").value = remark[6];
 	                          
 // 	                          alert(remark[0]);
 // 	                          alert(remark[1]);
@@ -203,7 +203,7 @@
 	                         });
 	            })
 
-				</script>
+				</script> -->
 				
 								
 								<label><input type="radio" id="new_addr" name="mem_addr">신규 배송지 설정</label>
@@ -256,7 +256,7 @@
 								
 
 								
-<script>
+<!-- <script>
 function newAddrInput() {
 	
     $(function() {
@@ -305,9 +305,9 @@ function newAddrInput() {
     location.reload();
     alert("새로운 배송지가 저장되었습니다.");
 }
-</script>
+</script> -->
 
-<script>
+<!-- <script>
 // function inputNewAddr(newAddr) {
 //     $.ajax({
 //         url: "shopping_new_addr.do", // 수량을 업데이트하는 JSP 페이지 경로
@@ -325,10 +325,10 @@ function newAddrInput() {
 //     location.reload();
 //     alert("새로운 배송지가 저장되었습니다.");
 // }
-</script>
+</script> -->
 
 							
-							<script>
+							<!-- <script>
 							//'주문자와 동일' 체크박스 선택 시 실행되는 js.
 							  function toggleInput() {
 							    const memNameInput = document.getElementById("mem_name_input");
@@ -363,9 +363,9 @@ function newAddrInput() {
 							    }
 							  }
 							
-							</script>
+							</script> -->
 							
-							<script>
+							<!-- <script>
 							//radio 신규배송지 선택시 실행되는 js.
 							var newAddrRadio = document.getElementById("new_addr");
 							var memNameInput = document.getElementById("mem_name_input");
@@ -420,9 +420,9 @@ function newAddrInput() {
 								  });
 								});
 
-							</script>
+							</script> -->
 							
-							<script>
+							<!-- <script>
 							//우편번호 검색 기능
 						    function sample6_execDaumPostcode() {
 						        new daum.Postcode({
@@ -472,7 +472,7 @@ function newAddrInput() {
 						        }).open();
 						    }
 							
-							</script>
+							</script> -->
 
 						</div>
 						
