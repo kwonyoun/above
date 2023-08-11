@@ -89,7 +89,7 @@
 
 			<div id="button-wrap" >
 				<div class="buttons" >
-					<button><a href="/cart?prodNum=${vo.prodNum}">add to bag</a></button>
+					<button><a href="/cartInsert?prodNum=${vo.prodNum}">add to bag</a></button>
 					<button><a href="/order?prodNum=${vo.prodNum}">order</a></button>
 				</div>
 			</div>

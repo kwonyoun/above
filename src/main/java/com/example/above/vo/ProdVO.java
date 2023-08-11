@@ -12,5 +12,7 @@ public class ProdVO {
 	private String prodContent;
 	private int prodPrice;
 	private String prodPostdate;
+	private int cartCnt;
+	private int cartNum;
 	
 }

@@ -4,16 +4,16 @@
 
 <mapper namespace="com.example.above.dao.CartDao">
 
-	<select id="selectMeminfo" parameterType="String" resultType="com.example.above.vo.MemVO" >
-		SELECT * FROM member WHERE memId= #{memId}
+	<select id="selectCartList" parameterType="String" resultType="com.example.above.vo.ProdVO" >
+		SELECT p.*, c.*
+		FROM cart c 
+		JOIN prod p ON c.prodNum = p.prodNum 
+		WHERE c.memId = #{memId} ;
 	</select>
 
-	<select id="selectOrdProd" parameterType="String" resultType="com.example.above.vo.ProdVO" >
-		SELECT * FROM prod WHERE prodnum= ${prodnum}
-	</select>
-
-	<!-- <insert id="insertOrder" parameterType="String, int, int" >
-		INSERT INTO ordinfo values (default,(SELECT memName FROM member WHERE memId=#{memId}), (SELECT memMobile FROM member WHERE memId=#{memId}),(SELECT memAddr FROM member WHERE memId=#{memId}), #{cartMemId} )
-	</insert> -->
+	<insert id="insertCart" parameterType="com.example.above.vo.CartVO" >
+		INSERT INTO cart values (default, #{memId}, ${prodNum} ,${cartCnt} )
+	</insert>
 
 </mapper>
+	

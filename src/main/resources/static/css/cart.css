@@ -200,3 +200,11 @@
     width: 40px;
     font-size: 1em;
 }
+
+
+/* /////////////////////// */
+/* wrap */
+#divwrap{
+    width: 1080px;
+    margin: 0 auto;
+}
