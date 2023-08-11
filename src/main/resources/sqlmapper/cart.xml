@@ -15,5 +15,9 @@
 		INSERT INTO cart values (default, #{memId}, ${prodNum} ,${cartCnt} )
 	</insert>
 
+	<delete id="deleteCart" parameterType="int">
+		DELETE FROM cart WHERE cartNum = ${cartNum}
+	</delete>
+
 </mapper>
 	

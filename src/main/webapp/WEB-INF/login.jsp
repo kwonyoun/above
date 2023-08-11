@@ -9,8 +9,8 @@
 <title>SpringBoot Index</title>
 <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
-<body>
 
+<body>
 
 	<div class="loginBox01">
 	<div class="loginBox_line">

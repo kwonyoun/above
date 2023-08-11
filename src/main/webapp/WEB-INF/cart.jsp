@@ -11,9 +11,21 @@
 	<link rel="stylesheet" href="css/cart.css" />
 	<script type="text/javascript" src="js/cart.js"></script>  
 </head>
-<jsp:include page="header.jsp" />
-<body>
 
+<jsp:include page="header.jsp" />
+
+<body>        
+
+    <!-- <% String memid = (String)session.getAttribute("id"); 
+
+         if(memid == null)
+         { %>
+			<script>
+				alert("로그인이 필요합니다.");
+				window.location.href="/login";
+			</script>
+		 <%}%> -->
+    
     <div id="divwrap" >
     <form name="orderform" id="orderform" method="post" class="orderform" action="/Page" onsubmit="return false;">
     
@@ -47,7 +59,7 @@
                         </div>
                     </div>
                     <div class="subdiv">
-                        <div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="20000">20,000원</div>
+                        <div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="${item.prodPrice}">${item.prodPrice}원</div>
                         <div class="num">
                             <div class="updown">
                                 <input type="text" name="p_num${item.cartNum}" id="p_num${item.cartNum}" size="2" maxlength="4" class="p_num" value="1" onkeyup="javascript:basket.changePNum('${item.cartNum}');">
@@ -58,7 +70,7 @@
                         <div class="sum">${item.prodPrice}원</div>
                     </div>
                     <div class="subdiv">
-                        <div class="basketcmd"><a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem();">삭제</a></div>
+                        <div class="basketcmd"><a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delItem('${item.cartNum}');">삭제</a></div>
                     </div>
                 </div>
                 </c:forEach>
@@ -70,8 +82,8 @@
                 <a href="javascript:void(0)" class="abutton" onclick="javascript:basket.delAllItem();">장바구니비우기</a>
             </div>
     
-            <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 4개</div>
-            <div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 74,200원</div>
+            <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 0개</div>
+            <div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 0원</div>
     
             <div id="goorder" class="">
                 <div class="clear"></div>

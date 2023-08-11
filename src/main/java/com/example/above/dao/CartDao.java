@@ -12,5 +12,6 @@ public interface CartDao {
 
     public ArrayList<ProdVO> selectCartList(String id);
     public void insertCart(CartVO vo);
+    public void deleteCart(int num);
     
 }

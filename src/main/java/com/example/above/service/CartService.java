@@ -26,5 +26,10 @@ public class CartService {
         System.out.println("svc");
         dao.insertCart(vo);
     }
+
+    //장바구니 delete
+    public void deleteCart(int num){
+        dao.deleteCart(num);
+    }
     
 }

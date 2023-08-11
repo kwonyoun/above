@@ -23,7 +23,6 @@ public class OrderController {
     @GetMapping("/order")
     public String selectOrdMem(Model model, HttpSession session, @RequestParam("prodNum") int prodNum ) {
         String id = (String) session.getAttribute("id");
-        System.out.println("id: "+id);
         System.out.println("prodNum: "+prodNum);
 
         MemVO memVO = svc.selectMeminfo(id);

@@ -77,10 +77,27 @@
 					<div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="${vo.prodPrice}">${vo.prodPrice}원</div>
 					<div class="num">
 						<div class="updown">
-							<input type="text" name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num" value="1" onkeyup="javascript:basket.changePNum(1);">
-							<span onclick="javascript:basket.changePNum(1);"><i class="fas fa-arrow-alt-circle-up up"></i></span>
-							<span onclick="javascript:basket.changePNum(1);"><i class="fas fa-arrow-alt-circle-down down"></i></span>
+							<input type="text" id="quantity" value="1" >
+							<button class="plus_btn" value="up">+</button>
+							<button class="minus_btn" value="down" >-</button>
 						</div>
+						<script>
+							/* 수량버튼 */
+							$(".plus_btn").on("click", function(){
+								let quantity = ++(document.getElementById("quantity").value);
+								quantity=document.getElementById("quantity").innerText;
+							});
+						
+							$(".minus_btn").on("click", function(){
+								let quantityElement = document.getElementById("quantity");
+								let quantity = parseInt(quantityElement.value);
+
+								if (quantity > 1) {
+									quantity--;
+									quantityElement.value = quantity;
+								}
+							});
+						</script>
 					</div>
 					<div class="sum">${vo.prodPrice}원</div>
 				</div>
@@ -107,6 +124,6 @@
 
 </body>
 
-<jsp:include page="footer.jsp" />			
+<!-- <jsp:include page="footer.jsp" />			 -->
 				
 </html>

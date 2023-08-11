@@ -7,7 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.above.service.CartService;
@@ -32,25 +37,30 @@ public class CartController {
         vo.setProdNum(prodNum);
         vo.setCartCnt(cnt);
 
-        // svc.insertCart(vo);
-
-        return "redirect:/cart";
+        svc.insertCart(vo);
+        
+    return "redirect:/cartList";
+        
     }
 
-    @GetMapping("/cart")
+    @GetMapping("/cartList")
     public String cartlist(Model model, HttpSession session){
         String id = (String) session.getAttribute("id");
         ArrayList<ProdVO> cart = svc.selectCartList(id);
-        for (int i = 0; i < cart.size(); i++) {
-            System.out.println("prodname");
-            System.out.println( cart.get(i).getProdName());
-        }
+
         // ModelAndView mav = new ModelAndView();
         // mav.addObject("cartList", cart); 
         // mav.setViewName("/cart");
         
         model.addAttribute("cartList", cart);
         return "cart";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/cartDelete/{cartNum}" ,method = RequestMethod.POST)
+    public String cartDelete(@RequestBody @PathVariable("cartNum") int cartNum){
+        svc.deleteCart(cartNum);
+        return "cartList";
     }
     
 }

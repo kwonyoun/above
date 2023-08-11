@@ -66,8 +66,21 @@ let basket = {
         this.reCalc();
         this.updateUI();
     },
-    delItem: function () {
-        event.target.parentElement.parentElement.parentElement.remove();
+    delItem: function (cartNum) {
+        // event.target.parentElement.parentElement.parentElement.remove();
+
+        $.ajax({
+            type : 'post',
+            url : '/cartDelete/'+cartNum,
+            success: function(res) {
+                alert("상품이 삭제되었습니다.");
+                document.location.href="/"+res;
+            },
+            error: function(xhr, status, error) {
+                // console.error(error);
+                alert("error:"+error);
+            }
+        });
         this.reCalc();
         this.updateUI();
     }
