@@ -21,9 +21,10 @@ public class OrderController {
     OrderService svc;
 
     @GetMapping("/order")
-    public String selectOrdMem(Model model, HttpSession session, @RequestParam("prodNum") int prodNum ) {
+    public String selectOrdMem(Model model, HttpSession session, @RequestParam("prodNum") int prodNum,@RequestParam("cnt") int cnt ) {
         String id = (String) session.getAttribute("id");
         System.out.println("prodNum: "+prodNum);
+        System.out.println("cnt: "+cnt);
 
         MemVO memVO = svc.selectMeminfo(id);
 
@@ -44,7 +45,7 @@ public class OrderController {
 
         model.addAttribute("memVO", memVO);
         model.addAttribute("ProdVO", ProdVO);
-        // model.addAttribute("ordQuan", quan);
+        model.addAttribute("ordCnt", cnt);
         return "prodOrder";
     }    
     

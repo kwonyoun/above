@@ -97,6 +97,20 @@
 									quantityElement.value = quantity;
 								}
 							});
+
+							$(".plus_btn, .minus_btn").on("click", function(){
+								let quantityElement = document.getElementById("quantity");
+								let prodNum = "${vo.prodNum}";
+								let quantity = quantityElement.value;
+							});
+
+							function sendOrder(prodNum) {
+								let quantityElement = document.getElementById("quantity");
+								let quantity = quantityElement.value;
+
+								window.location.href = "/order?prodNum="+prodNum+"&cnt="+quantity;
+							}
+
 						</script>
 					</div>
 					<div class="sum">${vo.prodPrice}원</div>
@@ -107,7 +121,8 @@
 			<div id="button-wrap" >
 				<div class="buttons" >
 					<button><a href="/cartInsert?prodNum=${vo.prodNum}">add to bag</a></button>
-					<button><a href="/order?prodNum=${vo.prodNum}">order</a></button>
+					<a id="orderLink" onclick="sendOrder('${vo.prodNum}')" href="#">order</a>
+
 				</div>
 			</div>
 

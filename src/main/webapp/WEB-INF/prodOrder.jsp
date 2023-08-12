@@ -125,7 +125,7 @@
 									<td><img style="width: 95px; height: 85px; text-align: left; " alt="prod_img" src="imgs/${ProdVO.prodImg}"></td>
 									<td></td>
 									<td>${ProdVO.prodPrice}</td>
-									<td></td>
+									<td>${ordCnt}</td>
 									<td></td>
 								</tr>
 
