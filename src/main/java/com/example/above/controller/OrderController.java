@@ -30,9 +30,9 @@ public class OrderController {
 
         String mb =memVO.getMemMobile();
         String[] mobile = mb.split("/");
-        memVO.setMemMobile1(mobile[0]);
-        memVO.setMemMobile2(mobile[1]);
-        memVO.setMemMobile3(mobile[2]);
+        memVO.setMemMobile1(mobile[1]);
+        memVO.setMemMobile2(mobile[2]);
+        memVO.setMemMobile3(mobile[3]);
 
         String ad = memVO.getMemAddr();
         String [] addr = ad.split("/");
@@ -47,6 +47,6 @@ public class OrderController {
         model.addAttribute("ProdVO", ProdVO);
         model.addAttribute("ordCnt", cnt);
         return "prodOrder";
-    }    
+    }  
     
 }

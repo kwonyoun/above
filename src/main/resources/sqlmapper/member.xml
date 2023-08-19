@@ -5,7 +5,7 @@
 <mapper namespace="com.example.above.dao.MemDao">
 
 	<insert id="insertSignup" parameterType="com.example.above.vo.MemVO"  >
-		INSERT INTO member VALUES (default, #{memId}, #{memPw})
+		INSERT INTO member VALUES (default, #{memId}, #{memPw}, #{memName}, #{memEmail}, #{memAddr},#{memMobile}, #{memBirth})
 	</insert>
 
     <select id="selectMem" parameterType="String" resultType="com.example.above.vo.MemVO">

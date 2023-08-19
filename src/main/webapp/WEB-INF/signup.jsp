@@ -121,7 +121,7 @@
 						<td>아이디</td>
 						<td><input type="text" class="formal" id="memId"
 							name="memId" value="${mem_id}" size="35" placeholder="아이디를 입력하세요."
-							onkeyup="only(this.value)"  ></td>
+							onkeyup="only(this.value)" required ></td>
 						<td><input type="button" id="idbtn" name="" value="중복확인"
 							style="background-color: #7E7DCB; color: white; padding: 0 20px; border-radius: 5px; margin-left: 5px;"></td>
 					</tr>
@@ -129,13 +129,13 @@
 						<td>비밀번호</td>
 						<td><input type="password" class="formal" id="mem_pw01"
 							name="memPw" value="${mem_pw}" size="35" maxlength="18"
-							placeholder="8~15자 사이의 비밀번호를 입력하세요" class="basic"  ></td>
+							placeholder="8~15자 사이의 비밀번호를 입력하세요" class="basic" required ></td>
 					</tr>
 					<tr>
 						<td>비밀번호확인</td>
 						<td><input type="password" class="formal" id="mem_pw02"
 							name="" value="" size="35" placeholder="한 번 더 입력해주세요"
-							maxlength="18"  ><br>
+							maxlength="18" required ><br>
 						<span id="mem_pwMsg" style="font-size: 0.9em; color: #7E7DCB;">
 								비밀번호를 입력해주세요.</span></td>
 						<td></td>
@@ -143,23 +143,23 @@
 
 					<tr>
 						<td>이름</td>
-						<td><input type="text" class="formal" name="mem_name"
-							value="${mem_name}" size="35" class="basic"  ></td>
+						<td><input type="text" class="formal" name="memName"
+							value="${mem_name}" size="35" class="basic" required ></td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>닉네임</td>
 						<td><input type="text" class="formal" name="mem_nick"
 							id="mem_nick" value="" size="35" class="basic"  ></td>
 						<td><input type="button" id="mem_nickbtn" name=""
 							value="중복확인"
 							style="background-color: #7E7DCB; color: white; padding: 0 20px; border-radius: 5px; margin-left: 5px;"></td>
-					</tr>
+					</tr> -->
 
 					<tr>
 						<td>E-mail</td>
-						<td><input type="text" name="mem_email1" value="${mem_email1}" size="18"
-							class="mem_email" style="margin-right: 7px;"> <span
-							style="opacity: 70%;">@</span> <select name="mem_email2">
+						<td><input type="text" name="memEmail1" value="${mem_email1}" size="18"
+							class="mem_email" style="margin-right: 7px;" required> <span
+							style="opacity: 70%;">@</span> <select name="memEmail2">
 								<option>선택</option>
 								<option value="@naver.com">naver.com</option>
 								<option value="@hanmail.net">hanmail.net</option>
@@ -170,15 +170,15 @@
 					<tr>
 					
 						<td>주소</td>
-						<td><input type="text" name="mem_addr1"
+						<td><input type="text" name="memAddr1"
 							id="sample6_postcode" placeholder="우편번호" readonly><br>
-							<input type="text" name="mem_addr2" id="sample6_address"
+							<input type="text" name="memAddr2" id="sample6_address"
 							placeholder="주소" name="address" size="35" style="margin-top: 3px"
 							readonly><br> <input type="text" 
-							name="mem_addr3" id="sample6_detailAddress" placeholder="상세주소"
-							style="margin-top: 3px" size="16"> <input type="text"
-							 name="mem_addr4" id="sample6_extraAddress"
-							placeholder="참고항목" size="15" style="margin-top: 3px"></td>
+							name="memAddr3" id="sample6_detailAddress" placeholder="상세주소"
+							style="margin-top: 3px" size="16" required> <input type="text"
+							 name="memAddr4" id="sample6_extraAddress"
+							placeholder="참고항목" size="15" style="margin-top: 3px" required></td>
 						<td><input type="button" onclick="sample6_execDaumPostcode()"
 							name="" value="우편번호 검색"
 							style="background-color: #7E7DCB; color: white; padding: 0 20px; border-radius: 5px; margin-left: 5px;"></td>
@@ -188,7 +188,7 @@
 						<td>휴대폰</td>
 						
 						<td>
-						<select name="mem_mobile0" class="formal"  >
+						<select name="memMobile0" class="formal"  >
 								<option>통신사</option>
 								<option value="kt">kt</option>
 								<option value="skt">skt</option>
@@ -196,17 +196,17 @@
 								<option value="알뜰폰">알뜰폰</option>
 						</select> 
 						
-						<input type="text" class="formal" name="mem_mobile1" id = "phone1" value="${mem_mobile1}" size="3" maxlength="3"  > - 
-						<input type="text" class="formal" name="mem_mobile2" id = "phone2" value="${mem_mobile2}" size="4" maxlength="4"  > - 
-						<input type="text" class="formal" name="mem_mobile3" id = "phone3" value="${mem_mobile3}" size="4" maxlength="4"  >
+						<input type="text" class="formal" name="memMobile1" id = "phone1" value="${mem_mobile1}" size="3" maxlength="3" required > - 
+						<input type="text" class="formal" name="memMobile2" id = "phone2" value="${mem_mobile2}" size="4" maxlength="4" required > - 
+						<input type="text" class="formal" name="memMobile3" id = "phone3" value="${mem_mobile3}" size="4" maxlength="4" required >
 						</td>
 							
 						<!-- 인증번호 구간은 기능에 맞춰 수정했습니다 -->
-						<td> <button type = "button" id ="numiden" class="dupcheck" onclick="identify()" style="width : 115px; background-color: #7E7DCB; color: white; border-radius: 5px;"><font color ="white">인증번호 받기</font></button>
-						</td>
+						<!-- <td> <button type = "button" id ="numiden" class="dupcheck" onclick="identify()" style="width : 115px; background-color: #7E7DCB; color: white; border-radius: 5px;"><font color ="white">인증번호 받기</font></button>
+						</td> -->
 					</tr>
 							
-							
+<!-- 							
 					<tr class="idenwrap" style ="width: 500px">
 							
 									<td><input type="text" id="numbox" size="10" class="idenbox"></input></td>
@@ -218,17 +218,17 @@
 										style="background-color: #bab9eb;" name="dupcheck"
 										class="idennumber" onclick="idenagain()">재전송</button>
 									</td>
-					</tr>
-					<td>성별</td>
+					</tr> -->
+					<!-- <td>성별</td>
 					<td class="mem_sex"><input type="radio" name="mem_sex"
 						id="men" value="M" style="width: 30px; height: 13px;"> <label
 						for="M">남성</label> <input type="radio" name="mem_sex" id="women"
 						value="F" style="width: 30px; height: 13px;"> <label
-						for="F">여성</label></td>
+						for="F">여성</label></td> -->
 					</tr>
 					<tr>
 						<td>생년월일</td>
-						<td><select name="mem_birth1">
+						<td><select name="memBirth1" >
 								<%
 								for (int i = 1960; i <= 2023; i++) {
 								%><option  <%String years = i + "";%>><%=years%>년
@@ -236,7 +236,7 @@
 								<%
 								}
 								%>
-						</select> <select name="mem_birth2">
+						</select> <select name="memBirth2">
 								<%
 								for (int i = 1; i <= 12; i++) {
 								%><option  <%String months = i + "";%>><%=months%>월
@@ -244,7 +244,7 @@
 								<%
 								}
 								%>
-						</select> <select name="mem_birth3">
+						</select> <select name="memBirth3">
 								<%
 								for (int i = 1; i <= 31; i++) {
 								%><option  <%String days = i + "";%>><%=days%>일
@@ -254,7 +254,7 @@
 								%>
 						</select></td>
 					</tr>
-					<tr>
+					<!-- <tr>
 						<td>소식받기</td>
 						<td><input type="checkbox" name="mem_news" value="sms"
 							class="mem_news" style="width: 20px; height: 13px;" checked>
@@ -264,13 +264,12 @@
 							<input type="checkbox" name="mem_news" value="N" class="mem_news"
 							style="width: 20px; height: 13px;" checked> <label>동의하지
 								않음</label>
-					</tr>
+					</tr> -->
 
 				</table>
 				<div class="line01" style="background-color: #7E7DCB;"></div>
 
-				<input class="but" type="submit" onclick="btn()" value="회원가입 완료"
-					onclick=location.href="tour002.jsp">
+				<input class="but" type="submit" value="회원가입 완료">
 			</div>
 		</form>
 
