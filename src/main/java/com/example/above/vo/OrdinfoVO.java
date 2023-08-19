@@ -8,7 +8,7 @@ import lombok.Data;
 public class OrdinfoVO {
 
     private int ordNum;
-    private String memCnt;
+    private String memId;
     private int paid_amount;
     private String imp_uid;
     private String buyerName;

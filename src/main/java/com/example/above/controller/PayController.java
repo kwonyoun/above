@@ -19,6 +19,8 @@ import com.example.above.vo.OrdinfoVO;
 import com.example.above.vo.PayinfoVO;
 // import com.google.gson.JsonObject;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class PayController {
 
@@ -32,26 +34,22 @@ public class PayController {
 
     @ResponseBody
 	@RequestMapping(value="/paySuccess", method=RequestMethod.POST)
-	public String paySuccess(@RequestBody HashMap<String, Object> map) {
+	public String paySuccess(@RequestBody HashMap<String, Object> map,HttpSession session) {
 
         //test
         System.out.println("paySuccess");
-        System.out.println(map);
         
+        String id = (String) session.getAttribute("id");
+        map.put("memId", id);
+
         String name = map.get("name").toString();
         System.out.println("name:"+name);
 
-        //return값으로 고유 uid를 반환하기.
+        //return값으로 고유 uid를 반환하기
+        //예시
         String imp_uid = map.get("imp_uid").toString();
 
-        String pg = map.get("pg").toString();
-        String pay_method = map.get("pay_method").toString();
-        String merchant_uid = map.get("merchant_uid").toString();
-        String quan = map.get("quan").toString();
-        String buyer_email = map.get("buyer_email").toString();
-        String buyer_name = map.get("buyer_name").toString();
-        System.out.println("pg:"+pg+pay_method+buyer_name);
-
+        System.out.println(map);
         svc.paySuccess(map);
 
         return imp_uid;

@@ -4,12 +4,16 @@
 
 <mapper namespace="com.example.above.dao.PayDao">
 
-    <insert id="paySuccess" >
+    <!-- <insert id="paySuccess" >
         insert into pay values(default, ${paid_amount}, #{imp_uid} )
+    </insert> -->
+
+    <insert id="paySuccess" >
+        insert into ordinfo values(default, #{memId}, ${paid_amount} ,#{imp_uid}, #{buyerName}, #{buyerMobile}, #{buyerAddr}, #{ordAsk}, #{ordDate}, #{ordProdNum}, #{ordQuan} )
     </insert>
 
-    <select id="payInfoSelect" parameterType="String" resultType="com.example.above.vo.PayinfoVO" >
-        select * from pay where imp_uid = #{imp_uid}
+    <select id="payInfoSelect" parameterType="String" resultType="com.example.above.vo.OrdinfoVO" >
+        select * from ordinfo where imp_uid = #{imp_uid}
     </select>
 
 </mapper>
