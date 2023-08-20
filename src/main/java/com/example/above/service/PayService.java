@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.above.dao.PayDao;
+import com.example.above.vo.OrdinfoVO;
 import com.example.above.vo.PayinfoVO;
 
 @Service
@@ -19,9 +20,9 @@ public class PayService {
         dao.paySuccess(map);
     };
 
-    public PayinfoVO payInfoSelect(String uid){
+    public OrdinfoVO payInfoSelect(String uid){
         System.out.println("svc");
-        PayinfoVO vo = dao.payInfoSelect(uid);
+        OrdinfoVO vo = dao.payInfoSelect(uid);
         System.out.println("vo"+vo);
         return vo;
     };

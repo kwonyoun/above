@@ -14,8 +14,8 @@ public class OrdinfoVO {
     private String buyerName;
     private String buyerMobile;
     private String buyerAddr;
-    private String ordAsk;;
     private String buyerEmail;
+    private String ordAsk;
     private String ordDate;
     private String ordCard;
     private String ordProdNum;

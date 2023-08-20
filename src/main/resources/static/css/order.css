@@ -217,6 +217,7 @@ input#addrName{
 section #pay_wrap{
 	width: 100px;
 	margin: 0 auto;
+	margin-bottom: 100px;
 }
 
 section #pay_wrap input{

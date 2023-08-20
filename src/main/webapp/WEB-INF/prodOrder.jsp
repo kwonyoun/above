@@ -62,7 +62,7 @@
 									<td></td>
 									<td>${ProdVO.prodPrice}</td>
 									<td>${ordCnt}</td>
-									<td></td>
+									<td> ${ProdVO.prodPrice * ordCnt}</td>
 								</tr>
 								<input type="hidden" id="prodprice" value="${ProdVO.prodPrice}" ></td>
 								<input type="hidden" id="ordcnt" value="${ordCnt}">

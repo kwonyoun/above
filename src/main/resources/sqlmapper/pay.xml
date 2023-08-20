@@ -9,7 +9,7 @@
     </insert> -->
 
     <insert id="paySuccess" >
-        insert into ordinfo values(default, #{memId}, ${paid_amount} ,#{imp_uid}, #{buyerName}, #{buyerMobile}, #{buyerAddr}, #{ordAsk}, #{ordDate}, #{ordProdNum}, #{ordQuan} )
+        insert into ordinfo values(default, #{memId}, ${paid_amount} ,#{imp_uid}, #{buyerName}, #{buyerMobile}, #{buyerAddr},#{buyerEmail}, #{ordAsk}, #{ordDate}, #{ordProdNum}, #{ordQuan} )
     </insert>
 
     <select id="payInfoSelect" parameterType="String" resultType="com.example.above.vo.OrdinfoVO" >

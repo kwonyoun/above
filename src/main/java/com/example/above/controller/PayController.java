@@ -1,5 +1,7 @@
 package com.example.above.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,12 +44,23 @@ public class PayController {
         String id = (String) session.getAttribute("id");
         map.put("memId", id);
 
-        String name = map.get("name").toString();
-        System.out.println("name:"+name);
+        // 현재 날짜/시간
+        LocalDateTime now = LocalDateTime.now();
+        String ordDate = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+        
+        map.put("ordDate", ordDate);
+
+        String ordProdNum = map.get("ordProdNum").toString();
+        System.out.println("name:"+ordProdNum);
 
         //return값으로 고유 uid를 반환하기
         //예시
         String imp_uid = map.get("imp_uid").toString();
+        String paid_amount = map.get("paid_amount").toString();
+        String buyerEmail = map.get("buyerEmail").toString();
+        String buyerName = map.get("buyerName").toString();
+        String buyerMobile = map.get("buyerMobile").toString();
+        String buyerAddr = map.get("buyerAddr").toString();
 
         System.out.println(map);
         svc.paySuccess(map);
@@ -59,7 +72,7 @@ public class PayController {
     public String payInfo(@PathVariable("res") String uid, Model model){
         System.out.println("payInfo");
 
-        PayinfoVO vo = svc.payInfoSelect(uid);
+        OrdinfoVO vo = svc.payInfoSelect(uid);
         model.addAttribute("vo", vo);
 
         return "paySuccess";

@@ -48,7 +48,7 @@ function requestPay() {
     var addr1 = document.getElementById("sample6_address").value;
     var addr2 = document.getElementById("sample6_detailAddress").value;
     var addr3 = document.getElementById("sample6_extraAddress").value;
-    var buyer_addr = addr1+" "+addr2+" "+addr3;
+    var buyer_addr = buyer_postcode+"/"+addr1+"/"+addr2+"/"+addr3;
     var prodprice = document.getElementById("prodprice").value;
     var ordcnt = document.getElementById("ordcnt").value;
     var prodname = document.getElementById("prodname").value;
@@ -63,8 +63,7 @@ function requestPay() {
         buyer_email : 'iamport@siot.do',
         buyer_name : buyer_name,
         buyer_tel : buyer_tel,
-        buyer_addr : buyer_addr,
-        buyer_postcode : buyer_postcode
+        buyer_addr : buyer_addr
     }, function(data){
         if(data.success){
             var msg = "결제 완료";
@@ -74,16 +73,15 @@ function requestPay() {
             msg += '// 카드 승인번호 : ' + data.apply_num;
 
             var ordData = {
-                "name" : data.name,
+                "ordProdNum" : data.name,
                 "imp_uid" : data.imp_uid,
                 "merchant_uid" : data.merchant_uid,
                 "paid_amount" : data.paid_amount,
                 "apply_num" : data.apply_num,
-                "buyer_email" : data.buyer_email,
-                "buyer_name" : data.buyer_name,
-                "buyer_tel" : data.buyer_tel,
-                "buyer_addr" : data.buyer_addr,
-                "buyer_postcode" : data.buyer_postcode
+                "buyerEmail" : data.buyer_email,
+                "buyerName" : data.buyer_name,
+                "buyerMobile" : data.buyer_tel,
+                "buyerAddr" : data.buyer_addr
             };
             
             $.ajax({
