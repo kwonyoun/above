@@ -37,15 +37,15 @@
             <ul>
                <li><a href="/login">로그인</a></li>
                <li><a href="/signup">회원가입</a></li>
-               <li><a href="/cscenter">고객센터</a></li>
+               <!-- <li><a href="/cscenter">고객센터</a></li> -->
             </ul>
          </div>
          <% } else if(memid != null) { %>
          <div id="header-right" >
             <ul>
                <li><a href="/logout">로그아웃</a></li>
-               <li><a href="/signup">myPage</a></li>
-               <li><a href="/cscenter">고객센터</a></li>
+               <li><a href="/myPage">myPage</a></li>
+               <!-- <li><a href="/cscenter">고객센터</a></li> -->
             </ul>
          </div> 
          <% } %>
