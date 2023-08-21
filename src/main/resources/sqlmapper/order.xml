@@ -16,8 +16,5 @@
 		INSERT INTO ordinfo values (default,(SELECT memName FROM member WHERE memId=#{memId}), (SELECT memMobile FROM member WHERE memId=#{memId}),(SELECT memAddr FROM member WHERE memId=#{memId}), #{cartMemId} )
 	</insert> -->
 
-	<select id="selectOrdinfo" resultType="com.example.above.vo.OrdinfoVO" >
-		SELECT * FROM ordinfo WHERE memId = #{memId} AND imp_uid = #{imp_uid}
-	</select>
-
+	
 </mapper>

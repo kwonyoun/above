@@ -43,28 +43,16 @@ public class OrderController {
         memVO.setMemAddr1(addr[0]);
         memVO.setMemAddr2(addr[1]);
         memVO.setMemAddr3(addr[2]);
-        memVO.setMemAddr4(addr[3]);
+        memVO.setMemAddr4(addr[3]); //addr4의 유무에 따라 오류 발생 ㅜㅜ
 
         ProdVO ProdVO = svc.selectOrdProd(prodNum);
-
+        
         model.addAttribute("memVO", memVO);
         model.addAttribute("ProdVO", ProdVO);
         model.addAttribute("ordCnt", cnt);
         return "prodOrder";
     }  
 
-    @GetMapping("/ordDetail")
-    public String selectOrdDetail(Model model, HttpSession session, @RequestParam("num") String imp_uid ) {
-        String id = (String) session.getAttribute("id");
-
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("memId", id);
-        map.put("imp_uid", imp_uid);
-
-        OrdinfoVO vo = svc.selectOrdinfo(map);
-
-        model.addAttribute("vo", vo);
-        return "orderdetail";
-    }  
+     
     
 }

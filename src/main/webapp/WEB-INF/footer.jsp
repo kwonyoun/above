@@ -9,7 +9,7 @@
      
  <!--푸터-->   
         <footer>
-		<div id="foot">	
+		<div id="foot" style="margin-top: 50px;" >	
 			<div class="footer2">
 				<div class="footer2_sec">
 					<p style="text-align: center; font-size: 8pt; font-weight:bold">

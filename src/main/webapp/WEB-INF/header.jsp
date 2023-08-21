@@ -45,7 +45,7 @@
             <ul>
                <li><a href="/logout">로그아웃</a></li>
                <li><a href="/myPage">myPage</a></li>
-               <!-- <li><a href="/cscenter">고객센터</a></li> -->
+               <li><a href="/cscenter">고객센터</a></li>
             </ul>
          </div> 
          <% } %>

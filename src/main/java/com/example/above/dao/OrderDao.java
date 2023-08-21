@@ -13,7 +13,7 @@ public interface OrderDao {
 
     public MemVO selectMeminfo(String id);
     public ProdVO selectOrdProd(int prodnum);
-    public OrdinfoVO selectOrdinfo(HashMap<String, Object> map);
+    
     
     
 }

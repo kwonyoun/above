@@ -28,11 +28,7 @@ public class OrderService {
         return vo;
     }
 
-    //주문정보 select
-    public OrdinfoVO selectOrdinfo(HashMap<String, Object> map) {
-        OrdinfoVO vo = dao.selectOrdinfo(map);
-        return vo;
-    }
+    
 
     
 
