@@ -8,4 +8,8 @@
 		select * from prod where prodNum = ${prodNum}
 	</select>
 
+	<select id="selectProdCategory" parameterType="int" resultType="com.example.above.vo.ProdVO">
+		select * from prod where categoryNum = ${categoryNum}
+	</select>
+
 </mapper>

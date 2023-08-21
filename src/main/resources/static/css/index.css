@@ -34,14 +34,16 @@
 }
 
 #prod-wrap{
-	background-color: aqua;
+	background-color: white;
 }
 
 ul.prod{
 	display: flex;
-	justify-content: space-around;
+	flex-wrap: wrap;
+	/* justify-content: space-between; */
 }
 
 ul.prod li{
 	/* width: 25%; */
+	margin: 15px;
 }

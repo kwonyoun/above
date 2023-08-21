@@ -7,7 +7,9 @@
 <head>
 <meta charset="UTF-8">
 <title>SpringBoot Index</title>
-<link rel="stylesheet" type="text/css" href="css/index.css">
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+<link rel="stylesheet" type="text/css" href="/css/header_footer.css">
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
    <script src="js/slick-1.8.1/slick/slick.min.js"></script>
@@ -30,7 +32,7 @@
 						<a href="/prod?prodNum=${vo.prodNum}">
 							<img style="width: 240px; height: 240px;" src="/imgs/${vo.prodImg}">
 						</a>
-						<div>${vo.prodName}</div>
+						<div style="width: 240px;" >${vo.prodName}</div>
 					</li>
 				</c:forEach>
 			</ul>
@@ -40,7 +42,7 @@
 		
 	</div>
 </div>
-<div style="background-image: 'https://img.youtube.com/vi/wa7OUjwEk04/mqdefault.jpg'; width: 500px; height: 500px; " ></div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G5Xg_frrEks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
     

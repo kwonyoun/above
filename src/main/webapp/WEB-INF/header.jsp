@@ -18,10 +18,10 @@
 
          <div id="header-left" >
             <ul>
-               <li>luggage</li>
-               <li>bags</li>
-               <li>goods</li>
-               <li>outlet</li>
+               <li><a href="/prod/goods?ct=1">TOP</a></li>
+               <li><a href="/prod/goods?ct=2">BOTTOM</a></li>
+               <li><a href="/prod/goods?ct=3">ACCESSORY</a></li>
+               <li><a href="/prod/goods?ct=4">CAP</a></li>
             </ul>
          </div>
 
