@@ -3,6 +3,8 @@ package com.example.above.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +29,6 @@ public class CsQnaController {
         model.addAttribute("qnalist", vo);
         return "csQnaList";
     }
-
     //qna등록 아이디 가져옴 
     //getmapping과 postmapping은 서로 다른거라서 경로를 같게 해도 된다.
     @GetMapping("/cscenter/qna/write")

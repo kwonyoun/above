@@ -19,8 +19,16 @@
 </head>
 
 <jsp:include page="header.jsp"/>
+<!-- <Script language="JavaScript">
+	window.open('URL', 'Name', 'Width=0, Height=0, Top=0, Left=0, Toolbar=yes, Menubar=yes, Statusbar=yes, Scrollbar=yes, Resizable=yes');
+	</Script> -->
 
 <body>
+	<div style="width: 1080px; margin: 0 auto;" >
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/G5Xg_frrEks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		<div><p>권윤진</p></div>
+	</div>
+
 <div id="wrap">
 	<div id="content" >
 		
@@ -42,7 +50,6 @@
 		
 	</div>
 </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G5Xg_frrEks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
     

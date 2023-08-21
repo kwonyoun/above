@@ -37,7 +37,7 @@
             <ul>
                <li><a href="/login">로그인</a></li>
                <li><a href="/signup">회원가입</a></li>
-               <!-- <li><a href="/cscenter">고객센터</a></li> -->
+               <!-- <li><a href="/cscenter">영상보기</a></li> -->
             </ul>
          </div>
          <% } else if(memid != null) { %>
