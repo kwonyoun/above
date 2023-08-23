@@ -24,4 +24,12 @@
 		update qnainfo set qnaTitle = #{qnaTitle}, qnaCon = #{qnaCon} where qnaNum = ${qnaNum}
 	</update>
 
+	<select id="getList" parameterType="com.example.above.vo.PageVO" resultType="com.example.above.vo.CsQnaVO">
+		select * from qnainfo Order by qnaNum desc LIMIT ${recordCountPerPage} OFFSET ${firstIndex}
+	</select>
+
+	<select id="getListCnt" parameterType="com.example.above.vo.PageVO" resultType="java.lang.Integer">
+		select count(*)	from qnainfo
+	</select>
+
 </mapper>
