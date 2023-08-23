@@ -36,9 +36,9 @@
         }
         %>
 
-	<section>
+	<section style="width: 1080px; margin: 20px auto;" >
 	
-	<div id="cs_qna_wrap" >
+	<div id="cs_qna_wrap" style="margin: 0 auto; width: 450px;" >
 		<h2>직접 문의하기</h2>
 		<form action="/cscenter/qna/write" method="post" name="boardform">
 			
@@ -50,10 +50,7 @@
 					<td class="td_right">
 					
 						<select name="qnaFil" id="qna_fil" required="required">
-							<option>select</option>
 							<option>문의내용 선택</option>
-							<option>항공예약</option>
-							<option>투어예약</option>
 							<option>쇼핑</option>
 							<option>교환/환불</option>
 							<option>기타</option>							
@@ -94,9 +91,9 @@
 			</table>
 			
 			<section id="commandCell">
-			
-				<input type="submit" value="등록">
-				
+				<div style="height: 50px; margin-top: 20px;" >
+					<input type="submit" value="등록" style="padding: 10px 20px;" >
+				</div>	
 			</section>
 			
 		</form>
