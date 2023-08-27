@@ -71,7 +71,7 @@
     }
 </script>
 
-<script>
+<!-- <script>
 
 	//아이디 중복 체크 
 	$(document).ready(function(){
@@ -101,15 +101,14 @@
 		});
 	});
 		
-</script>
+</script> -->
 
 <body>
 
 	<div id="wrap" style="text-align: center;">
 	
 		<!--회원가입폼-->
-		<form style="margin-top: 100px;" method="post"
-			action="/signup">
+		<form style="margin-top: 100px;" id='join_form'>
 			<h2>회원가입</h2>
 			<div class="line01" style="background-color: #7E7DCB;"></div>
 			<div id="joinwrap">
@@ -272,6 +271,34 @@
 				<input class="but" type="submit" value="회원가입 완료">
 			</div>
 		</form>
+		<script>
+			const form = document.getElementById('join_form');
+	
+			form.addEventListener('submit', e => {
+				e.preventDefault();
+	
+				const data = new FormData(form);
+				const param = JSON.stringify(Object.fromEntries(data));
+	
+				fetch('/auth/join', {
+					method: 'POST',
+					body: param,
+					headers: {
+						'Content-Type': 'application/json'
+					}
+				})
+				.then(response => {
+					debugger;
+					if (response.status == 200) {
+						window.location.href = '/login';
+						alert("회원가입 성공")
+					} else {
+						alert("회원가입 실패")
+					}
+				})
+				.catch(error => console.log(error))
+			});
+		</script>
 
 	</div>
 

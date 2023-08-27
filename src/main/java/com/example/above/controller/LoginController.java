@@ -22,17 +22,17 @@ public class LoginController {
         return "login";
     }
 
-    @PostMapping("/login")
-    public String login(@RequestParam("memId") String id, @RequestParam("memPw") String pw, HttpSession session) {
-       MemVO login = memService.selectMem(id,pw);
+    // @PostMapping("/login")
+    // public String login(@RequestParam("memId") String id, @RequestParam("memPw") String pw, HttpSession session) {
+    //    MemVO login = memService.selectMem(id,pw);
 
-       if(login ==null) {
-            System.out.println("실패");
-       } else {
-            System.out.println("성공");
-            session.setAttribute("id", login.getMemId());
-       }
+    //    if(login ==null) {
+    //         System.out.println("실패");
+    //    } else {
+    //         System.out.println("성공");
+    //         session.setAttribute("id", login.getMemId());
+    //    }
 
-       return "redirect:";
-    }
+    //    return "redirect:";
+    // }
 }

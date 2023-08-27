@@ -1,11 +1,8 @@
 package com.example.above.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
-import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,8 +37,8 @@ public class CsQnaController {
         pageVO.setFirstIndex(pagination.getFirstRecordIndex()); //
         pageVO.setRecordCountPerPage(pagination.getRecordCountPerPage());
 
-        List<CsQnaVO> boardList = svc.getList(pageVO);
-        int totCnt = svc.getListCnt(pageVO);
+        List<CsQnaVO> boardList = svc.getList(pageVO); //게시판을 데이터베이스에서 select하여 저장함.
+        int totCnt = svc.getListCnt(pageVO); //페이징을 위해 게시글 수를 select하여 저장함.
 
         pagination.setTotalRecordCount(totCnt);
         

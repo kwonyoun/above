@@ -14,17 +14,17 @@
 
 	<div class="loginBox01">
 	<div class="loginBox_line">
-		<form action="/login" method="post">
+		<form action="/login-process" method="post">
 		<div class="loginBox02">
 		<div class="logoimg"><a href="#"><img src="mainindeximgs/logo.png"></a></div>
 		<div class="form-group">
 		<label for="iid">아이디</label>
-		<input type="text" name="memId" id="iid" class="form-control"/>
+		<input type="text" name="userid" id="iid" class="form-control"/>
 		</div>
 		
 		<div class="form-group">
 		<label for="pw">비밀번호</label>
-		<input type="password" name="memPw">
+		<input type="password" name="pw">
 		</div>
 		
 		<div class="form-group">
@@ -39,6 +39,11 @@
 		</div>
 		
 	</form>
+
+	<form class="form-signin" method="get" action="/signup">
+        <button class="btn btn-lg btn-warning btn-block" type="submit">회원가입하기</button>
+    </form>
+	
 	</div>
 	</div>
 	<div class="loginBottom">

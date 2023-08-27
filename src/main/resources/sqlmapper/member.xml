@@ -16,4 +16,12 @@
         select count(memId) from member where memId = #{memId}
     </select>
 
+    <select id="findByUserid" parameterType="String" resultType="com.example.above.vo.MemVO" >
+		SELECT * from member WHERE memId = #{memId}
+	</select>
+
+    <insert id="insertJoin" parameterType="com.example.above.vo.MemVO" >
+		insert into member values (default, #{memId}, #{memPw}, #{memName}, #{memEmail}, #{memAddr},#{memMobile}, #{memBirth}, #{roles})
+	</insert>
+
 </mapper>

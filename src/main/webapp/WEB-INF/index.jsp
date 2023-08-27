@@ -24,9 +24,11 @@
 	</Script> -->
 
 <body>
-	<div style="width: 1080px; margin: 0 auto;" >
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/G5Xg_frrEks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-		<div><p>권윤진</p></div>
+	<div style="width: 1080px; margin: 0 auto; display: flex; margin-top: 20px; justify-content: space-between; " >
+		<div>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/G5Xg_frrEks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		</div>
+		<div><p>아이디: aa<br>비밀번호: aa</p></div>
 	</div>
 
 <div id="wrap">
