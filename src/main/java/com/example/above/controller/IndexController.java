@@ -25,6 +25,11 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/header")
+    public String header(){
+        return "header";
+    }
+
     // @GetMapping("/index")
     // public String indexLogin(@AuthenticationPrincipal User user, Model model){
     //     ArrayList<ProdVO> vo = svc.selectProdLIst();

@@ -19,12 +19,12 @@
 		<div class="logoimg"><a href="#"><img src="mainindeximgs/logo.png"></a></div>
 		<div class="form-group">
 		<label for="iid">아이디</label>
-		<input type="text" name="userid" id="iid" class="form-control"/>
+		<input type="text" name="memId" id="iid" class="form-control"/>
 		</div>
 		
 		<div class="form-group">
 		<label for="pw">비밀번호</label>
-		<input type="password" name="pw">
+		<input type="password" name="memPw">
 		</div>
 		
 		<div class="form-group">

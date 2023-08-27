@@ -26,8 +26,11 @@ public class SpringSecurityConfig {
                 http.csrf().disable().cors().disable()
                         .authorizeHttpRequests(request -> request
                                 .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
-                                .requestMatchers(new AntPathRequestMatcher("/images/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/imgs/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/css/**")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/js/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/header")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/signup")).permitAll()
                                 // view/admin에 접근하려면 roles의 ADMIN만 접근할 수 있다. 
                                 .requestMatchers(new AntPathRequestMatcher("/view/admin")).hasAnyRole("ADMIN") //이건 test
@@ -45,7 +48,7 @@ public class SpringSecurityConfig {
                         .loginProcessingUrl("/login-process")	// [B] submit 받을 url
                         .usernameParameter("memId")	// [C] submit할 아이디
                         .passwordParameter("memPw")	// [D] submit할 비밀번호
-                        .defaultSuccessUrl("/securitytest", true)
+                        .defaultSuccessUrl("/", true)
                         .permitAll()
                         )
                         .logout(withDefaults());	// 로그아웃은 기본설정으로 (/logout으로 인증해제)
