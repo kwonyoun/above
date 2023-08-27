@@ -120,7 +120,7 @@
 						<td>아이디</td>
 						<td><input type="text" class="formal" id="memId"
 							name="memId" value="${mem_id}" size="35" placeholder="아이디를 입력하세요."
-							onkeyup="only(this.value)" required ></td>
+							required ></td>
 						<td><input type="button" id="idbtn" name="" value="중복확인"
 							style="background-color: #7E7DCB; color: white; padding: 0 20px; border-radius: 5px; margin-left: 5px;"></td>
 					</tr>

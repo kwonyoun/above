@@ -45,7 +45,7 @@ public class SpringSecurityConfig {
                         .loginProcessingUrl("/login-process")	// [B] submit 받을 url
                         .usernameParameter("memId")	// [C] submit할 아이디
                         .passwordParameter("memPw")	// [D] submit할 비밀번호
-                        .defaultSuccessUrl("redirect:/", true)
+                        .defaultSuccessUrl("/securitytest", true)
                         .permitAll()
                         )
                         .logout(withDefaults());	// 로그아웃은 기본설정으로 (/logout으로 인증해제)
