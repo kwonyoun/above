@@ -11,6 +11,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import static org.springframework.security.config.Customizer.withDefaults;
 
 import jakarta.servlet.DispatcherType;
+import jakarta.servlet.http.HttpSession;
 
 @Configuration
 public class SpringSecurityConfig {
@@ -23,14 +24,17 @@ public class SpringSecurityConfig {
         
         @Bean
         public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+                
                 http.csrf().disable().cors().disable()
                         .authorizeHttpRequests(request -> request
                                 .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
+                                .dispatcherTypeMatchers(DispatcherType.INCLUDE).permitAll() //header,footer include하기
                                 .requestMatchers(new AntPathRequestMatcher("/imgs/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/css/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/js/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/index")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/status/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/header")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/signup")).permitAll()
                                 // view/admin에 접근하려면 roles의 ADMIN만 접근할 수 있다. 
@@ -52,9 +56,28 @@ public class SpringSecurityConfig {
                         .defaultSuccessUrl("/index", true)
                         .permitAll()
                         )
-                        .logout(withDefaults());	// 로그아웃은 기본설정으로 (/logout으로 인증해제)
+                        
+                        
+                        // 여기서부터 로그아웃 API 내용~!
+                        .logout( logout -> { logout
+                        .logoutUrl("/logout")   // 로그아웃 처리 URL (= form action url)
+                        //.logoutSuccessUrl("/login") // 로그아웃 성공 후 targetUrl, 
+                        // logoutSuccessHandler 가 있다면 효과 없으므로 주석처리.
+                        .addLogoutHandler((request, response, authentication) -> { 
+                                // 사실 굳이 내가 세션 무효화하지 않아도 됨. 
+                                // LogoutFilter가 내부적으로 해줌.
+                                HttpSession session = request.getSession();
+                                if (session != null) {
+                                        session.invalidate();
+                                }
+                        })  // 로그아웃 핸들러 추가
+                        .logoutSuccessHandler((request, response, authentication) -> {
+                                response.sendRedirect("/");
+                        }) // 로그아웃 성공 핸들러
+                        .deleteCookies("remember-me"); // 로그아웃 후 삭제할 쿠키 지정
+                        });
 
-                return http.build();
-        }
+                                return http.build();    
+                        }
     
 }

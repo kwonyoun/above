@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,37 +24,36 @@
                <li><a href="/prod/goods?ct=4">CAP</a></li>
             </ul>
          </div>
+         
 
          <div id="logowrap" >
             <a href="/"><img src="/imgs/bully.jpg" ></a>
-         </div>
-
-         ${loginId}
-
-         <form method="post" action="/logout">
-            <button class="btn btn-sm btn-danger btn-block" type="submit">로그아웃</button>
-        </form>
-
-         <!-- <% String memid = (String)session.getAttribute("id"); 
-
-         if(memid == null)
-         { %>
+         </div>     
+         ${loginId}${loginRoles}
+         <c:if test="${loginId == null}" >
          <div id="header-right" >
             <ul>
                <li><a href="/login">로그인</a></li>
-               <li><a href="/signup">회원가입</a></li> -->
-               <!-- <li><a href="/cscenter">영상보기</a></li> -->
-            <!-- </ul>
-         </div>
-         <% } else if(memid != null) { %>
-         <div id="header-right" >
-            <ul>
-               <li><a href="/logout">로그아웃</a></li>
-               <li><a href="/myPage">myPage</a></li>
+               <li><form class="form-signin" method="get" action="/signup">
+                  <button class="btn btn-lg btn-warning btn-block" type="submit">회원가입</button>
+               </form></li>
                <li><a href="/cscenter/qnalist">고객센터</a></li>
             </ul>
-         </div>  -->
-         <!-- <% } %> -->
+         </div>
+         </c:if>
+
+         <c:if test="${loginId != null}" >
+         <div id="header-right" >
+            <ul>
+               <li><form method="post" action="/logout">
+                  <button class="btn btn-sm btn-danger btn-block" type="submit">로그아웃</button>
+               </form></li>
+               <li><a href="/myPage">${loginId}의 myPage</a></li>
+               <li><a href="/cscenter/qnalist">고객센터</a></li>
+            </ul>
+         </div> 
+         </c:if>
+         
       </div>
    </div>
 </html>

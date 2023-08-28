@@ -72,7 +72,7 @@ a {
 }
 
  #header-right{
-   width: 280px;
+   /* width: 280px; */
    float: right;
  }
 

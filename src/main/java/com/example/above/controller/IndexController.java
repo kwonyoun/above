@@ -29,6 +29,11 @@ public class IndexController {
     public String header(){
         return "header";
     }
+    
+    @GetMapping("/footer")
+    public String footer(){
+        return "footer";
+    }
 
     @GetMapping("/index")
     public String indexLogin(@AuthenticationPrincipal User user, Model model){
