@@ -11,6 +11,11 @@ import org.springframework.stereotype.Component;
 import com.example.above.service.MemService;
 import com.example.above.vo.MemVO;
 
+import lombok.extern.slf4j.Slf4j;
+
+// 로그인을 위한 username (혹은 id, email) 이 DB에 있는지 확인하는 메서드 
+// loadUserByUsername 메서드를 작성합니다.
+@Slf4j //Project Lombok 라이브러리의 어노테이션 중 하나로, 로깅을 위한 코드를 간결하게 작성할 수 있게 도와줍니다.
 @Component
 public class MyUserDetailsService implements UserDetailsService{
 
@@ -30,6 +35,7 @@ public class MyUserDetailsService implements UserDetailsService{
 
         MemVO member = findOne.orElseThrow(() -> new UsernameNotFoundException("없는 회원입니다 ㅠ"));
 
+        log.info("insertedUserId: "+insertedUserId);
         return User.builder()
                 .username(member.getMemId()) //가져온 정보에서 userid
                 .password(member.getMemPw()) //가져온 정보에서 pw

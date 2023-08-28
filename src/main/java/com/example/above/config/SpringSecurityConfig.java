@@ -37,6 +37,7 @@ public class SpringSecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/status/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/header")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/signup")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/cscenter/qnalist")).permitAll()
                                 // view/admin에 접근하려면 roles의 ADMIN만 접근할 수 있다. 
                                 .requestMatchers(new AntPathRequestMatcher("/view/admin")).hasAnyRole("ADMIN") //이건 test
                                 .requestMatchers(new AntPathRequestMatcher("/view/setting/admin")).hasAnyRole("ADMIN")

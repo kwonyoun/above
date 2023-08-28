@@ -26,7 +26,7 @@ public class CsQnaController {
     @GetMapping("/cscenter/qnalist")
     public String cscenterQna(Model model) {
         // ArrayList<CsQnaVO> vo = svc.selectQnaList();
-        System.out.println("page1");
+        // System.out.println("page1");
         PageVO pageVO = new PageVO(); //PageVO객체 생성
 
         Pagination pagination = new Pagination();//화면에서 보여질 페이지 클래스
@@ -63,7 +63,7 @@ public class CsQnaController {
     @GetMapping("/cscenter/qnalist/page")
     public String cscenterQnaPage(Model model, @RequestParam("pageIndex") int page) {
         // ArrayList<CsQnaVO> vo = svc.selectQnaList();
-        System.out.println("paging"+page);
+        // System.out.println("paging"+page);
         PageVO pageVO = new PageVO(); //PageVO객체 생성
 
         Pagination pagination = new Pagination();//화면에서 보여질 페이지 클래스

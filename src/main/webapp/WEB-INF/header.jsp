@@ -25,12 +25,11 @@
             </ul>
          </div>
          
-
          <div id="logowrap" >
             <a href="/"><img src="/imgs/bully.jpg" ></a>
          </div>     
-         ${loginId}${loginRoles}
-         <c:if test="${loginId == null}" >
+            
+         <c:if test="${pageContext.request.userPrincipal.name == null}" >
          <div id="header-right" >
             <ul>
                <li><a href="/login">로그인</a></li>
@@ -42,13 +41,13 @@
          </div>
          </c:if>
 
-         <c:if test="${loginId != null}" >
+         <c:if test="${pageContext.request.userPrincipal.name != null}" >
          <div id="header-right" >
             <ul>
                <li><form method="post" action="/logout">
                   <button class="btn btn-sm btn-danger btn-block" type="submit">로그아웃</button>
                </form></li>
-               <li><a href="/myPage">${loginId}의 myPage</a></li>
+               <li><a href="/myPage">${pageContext.request.userPrincipal.name}의 myPage</a></li>
                <li><a href="/cscenter/qnalist">고객센터</a></li>
             </ul>
          </div> 
