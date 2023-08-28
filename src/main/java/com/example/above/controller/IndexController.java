@@ -30,13 +30,13 @@ public class IndexController {
         return "header";
     }
 
-    // @GetMapping("/index")
-    // public String indexLogin(@AuthenticationPrincipal User user, Model model){
-    //     ArrayList<ProdVO> vo = svc.selectProdLIst();
-    //     model.addAttribute("loginId", user.getUsername());
-    //     model.addAttribute("loginRoles", user.getAuthorities());
-    //     model.addAttribute("vo", vo);
-    //     return "index";
-    // }
+    @GetMapping("/index")
+    public String indexLogin(@AuthenticationPrincipal User user, Model model){
+        ArrayList<ProdVO> vo = svc.selectProdLIst();
+        model.addAttribute("loginId", user.getUsername());
+        model.addAttribute("loginRoles", user.getAuthorities());
+        model.addAttribute("vo", vo);
+        return "index";
+    }
     
 }

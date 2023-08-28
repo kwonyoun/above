@@ -29,16 +29,22 @@
             <a href="/"><img src="/imgs/bully.jpg" ></a>
          </div>
 
-         <% String memid = (String)session.getAttribute("id"); 
+         ${loginId}
+
+         <form method="post" action="/logout">
+            <button class="btn btn-sm btn-danger btn-block" type="submit">로그아웃</button>
+        </form>
+
+         <!-- <% String memid = (String)session.getAttribute("id"); 
 
          if(memid == null)
          { %>
          <div id="header-right" >
             <ul>
                <li><a href="/login">로그인</a></li>
-               <li><a href="/signup">회원가입</a></li>
+               <li><a href="/signup">회원가입</a></li> -->
                <!-- <li><a href="/cscenter">영상보기</a></li> -->
-            </ul>
+            <!-- </ul>
          </div>
          <% } else if(memid != null) { %>
          <div id="header-right" >
@@ -47,8 +53,8 @@
                <li><a href="/myPage">myPage</a></li>
                <li><a href="/cscenter/qnalist">고객센터</a></li>
             </ul>
-         </div> 
-         <% } %>
+         </div>  -->
+         <!-- <% } %> -->
       </div>
    </div>
 </html>
