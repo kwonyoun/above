@@ -77,7 +77,8 @@
 					<div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="${vo.prodPrice}"></div>
 					<div class="num">
 						<div class="updown">
-							<input type="text" id="quantity" value="1" >
+							<input type="hidden" id="memid" value="${pageContext.request.userPrincipal.name}" />
+							<input type="text" id="quantity" value="1" />
 							<button class="plus_btn" value="up">+</button>
 							<button class="minus_btn" value="down" >-</button>
 						</div>
@@ -106,18 +107,20 @@
 
 							function sendOrder(prodNum) {
 								let quantityElement = document.getElementById("quantity");
+								let memid = document.getElementById("memid").value;
+								alert(memid);
 								let quantity = quantityElement.value;
 
-								window.location.href = "/order?prodNum="+prodNum+"&cnt="+quantity;
+								window.location.href = "/order?prodNum="+prodNum+"&cnt="+quantity+"&memid="+memid;
 							}
 
 						</script>
 					</div>
-					<div class="sum">${vo.prodPrice}원</div>
-					<div id="button-wrap" >
+					<!-- <div class="sum">${vo.prodPrice}원</div> -->
+					<div id="button-wrap" style="margin-top: 20px;" >
 						<div class="buttons" >
 							<button><a href="/cartInsert?prodNum=${vo.prodNum}">add to bag</a></button>
-							<a id="orderLink" onclick="sendOrder('${vo.prodNum}')" href="#">order</a>
+							<a id="orderLink" onclick="sendOrder('${vo.prodNum}')" href="#" style="margin-left: 30px; font-size: 1.2em;" >order</a>
 		
 						</div>
 					</div>
