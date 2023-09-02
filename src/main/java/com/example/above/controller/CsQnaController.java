@@ -104,22 +104,16 @@ public class CsQnaController {
     //qna등록 아이디 가져옴 
     //getmapping과 postmapping은 서로 다른거라서 경로를 같게 해도 된다.
     @GetMapping("/cscenter/qna/write")
-    public String qnaWrite(HttpSession session) {
-        String memid = (String)session.getAttribute("id");
-        System.out.println("sessionId:       "+memid);
+    public String qnaWrite() {
         return "csQnaWrite";
         
     }
 
     //qna등록 내용 insert하기 
     @PostMapping("/cscenter/qna/write")
-    public String qnaWriteSuc(HttpSession session, @ModelAttribute CsQnaVO vo) {
-        String memid = (String)session.getAttribute("id");
-        vo.setQnaMemId(memid);
+    public String qnaWriteSuc(@ModelAttribute CsQnaVO vo) {
         svc.insertQna(vo);
-
         return "redirect:/cscenter/qnalist";
-
     }
 
     //qna게시글 보기

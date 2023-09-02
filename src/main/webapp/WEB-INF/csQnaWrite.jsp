@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
 <html>
@@ -17,10 +18,10 @@
 <body>
 	<!-- 게시판 등록 -->
 
- <jsp:include page="header.jsp" />
+ <jsp:include page="/header" />
 
  
-<%
+<!-- <%
 		request.setCharacterEncoding("utf-8"); 
         
         String memid = (String)session.getAttribute("id"); //session으로 가져오면 무조건 String으로 받으로 형변환해야 한다.
@@ -32,17 +33,25 @@
 			    location.href = "/login";
 			</script>
         	<% 
-        } else{
         }
-        %>
+        %> -->
+		<c:if test="${pageContext.request.userPrincipal.name==null}" >
+			<script>
+			    alert("로그인을 해주세요.ㅁㅁㅁㅁㅁ");
+			    location.href = "/login";
+			</script>
+		</c:if>
 
 	<section style="width: 1080px; margin: 20px auto;" >
 	
 	<div id="cs_qna_wrap" style="margin: 0 auto; width: 450px;" >
-		<h2>직접 문의하기</h2>
+		<div style="width: 450px;" >
+			<h2 style="margin: 0 auto; width: 140px; margin-bottom: 20px; " >직접 문의하기</h2>
+		</div>
 		<form action="/cscenter/qna/write" method="post" name="boardform">
 			
 			<table>
+				<input type="hidden" name="qnaMemId" value="${pageContext.request.userPrincipal.name}"/>
 			
 				<tr>
 					<td class="td_left">카테고리 설정</td>
@@ -90,8 +99,8 @@
 				
 			</table>
 			
-			<section id="commandCell">
-				<div style="height: 50px; margin-top: 20px;" >
+			<section id="commandCell" style="width: 450px;">
+				<div style="height: 50px; margin: 0 auto; width: 70px; margin-top: 20px;" >
 					<input type="submit" value="등록" style="padding: 10px 20px;" >
 				</div>	
 			</section>

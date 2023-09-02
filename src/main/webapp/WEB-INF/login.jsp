@@ -16,7 +16,7 @@
 	<div class="loginBox_line">
 		<form action="/login-process" method="post">
 		<div class="loginBox02">
-		<div class="logoimg"><a href="#"><img src="mainindeximgs/logo.png"></a></div>
+		<div class="logoimg"><a href="#"><img src="/imgs/logo.png"></a></div>
 		<div class="form-group">
 		<label for="iid">아이디</label>
 		<input type="text" name="memId" id="iid" class="form-control"/>
@@ -35,29 +35,27 @@
 		<div class="form-group01">
 		<a href="#">아이디찾기</a>
 		<a href="#">비밀번호찾기</a>
+		<!-- <form class="form-signin" method="get" action="/signup">
+			<button class="btn btn-lg btn-warning btn-block" type="submit">회원가입하기</button>
+		</form> -->
 		</div>
 		</div>
 		
 	</form>
 
-	<form class="form-signin" method="get" action="/signup">
-        <button class="btn btn-lg btn-warning btn-block" type="submit">회원가입하기</button>
-    </form>
+	
 	
 	</div>
 	</div>
 	<div class="loginBottom">
-		<div>
-		<a href="#"><img src="mainindeximgs/loginBanner.png"></a></div>
-		
 		<div class="etcText"><a href="#">이용약관&nbsp;&nbsp;</a>|
 		<a href="#">&nbsp;&nbsp;개인정보처리방침&nbsp;&nbsp;</a>|
 		<a href="#">&nbsp;&nbsp;책임의 한계와 법적고지&nbsp;&nbsp;</a>|
 		<a href="#">&nbsp;&nbsp;고객센터</a></div>
 		 
 		<div class="bottom">
-		<div class="bottomLogo"><a href="#">ittravel</a></div>
-		<div class="copy">Copyright © ITTRAVEL Corp. All Rights Reserved.</div>
+		<div class="bottomLogo"><a href="#">A6ove</a></div>
+		<div class="copy">Copyright © A6ove Corp. All Rights Reserved.</div>
 		</div>
 		</div>
 	</div>

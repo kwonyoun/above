@@ -29,7 +29,7 @@
 		<div>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/G5Xg_frrEks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		</div>
-		<div><p>아이디: aa<br>비밀번호: aa</p></div>
+		<div><p>아이디: ff<br>비밀번호: ff</p></div>
 	</div>
 
 <div id="wrap">

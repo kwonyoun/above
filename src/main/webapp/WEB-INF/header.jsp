@@ -26,7 +26,7 @@
          </div>
          
          <div id="logowrap" >
-            <a href="/"><img src="/imgs/bully.jpg" ></a>
+            <a href="/"><img src="/imgs/logo.png" ></a>
          </div>     
             
          <c:if test="${pageContext.request.userPrincipal.name == null}" >
@@ -36,7 +36,7 @@
                <li><form class="form-signin" method="get" action="/signup">
                   <button class="btn btn-lg btn-warning btn-block" type="submit">회원가입</button>
                </form></li>
-               <li><a href="/cscenter/qnalist">고객센터</a></li>
+               <li><a href="/cscenter/qnalist">Q&A</a></li>
             </ul>
          </div>
          </c:if>
@@ -44,11 +44,11 @@
          <c:if test="${pageContext.request.userPrincipal.name != null}" >
          <div id="header-right" >
             <ul>
+               <li><a href="/myPage">${pageContext.request.userPrincipal.name}의 주문내역 확인</a></li>
                <li><form method="post" action="/logout">
                   <button class="btn btn-sm btn-danger btn-block" type="submit">로그아웃</button>
-               </form></li>
-               <li><a href="/myPage">${pageContext.request.userPrincipal.name}의 myPage</a></li>
-               <li><a href="/cscenter/qnalist">고객센터</a></li>
+               </form></li>                  
+               <li><a href="/cscenter/qnalist">Q&A</a></li>
             </ul>
          </div> 
          </c:if>

@@ -56,14 +56,14 @@ public class IndexController {
     // }
 
     //session id보이기
-    @RequestMapping("/index")
-    public ModelAndView indexSession(ModelAndView mav) {
-        ArrayList<ProdVO> vo = svc.selectProdLIst();
-        String loginId = SecurityContextHolder.getContext().getAuthentication().getName();
-        mav.addObject("loginId", loginId);
-        mav.addObject("vo", vo);
-        mav.setViewName("index");
-        return mav;
-    }
+    // @RequestMapping("/index")
+    // public ModelAndView indexSession(ModelAndView mav) {
+    //     ArrayList<ProdVO> vo = svc.selectProdLIst();
+    //     String loginId = SecurityContextHolder.getContext().getAuthentication().getName();
+    //     mav.addObject("loginId", loginId);
+    //     mav.addObject("vo", vo);
+    //     mav.setViewName("index");
+    //     return mav;
+    // }
     
 }

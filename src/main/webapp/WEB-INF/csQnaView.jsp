@@ -61,13 +61,13 @@
                 </div>
             </div>
 
-            <div class="qna_re" >
+            <!-- <div class="qna_re" >
             
             <div class="board_title">
 	            <h2>답변</h2>
 	        </div>
 
-            </div>
+            </div> -->
            
             <div class="bt_wrap">
                 <a href="/cscenter/qnalist" class="on">목록</a>

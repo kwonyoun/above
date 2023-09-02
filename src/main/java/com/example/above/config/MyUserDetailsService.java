@@ -31,7 +31,7 @@ public class MyUserDetailsService implements UserDetailsService{
     public UserDetails loadUserByUsername(String insertedUserId) throws UsernameNotFoundException {
         //id로 정보 가져오기
         Optional<MemVO> findOne = memberService.findOne(insertedUserId);
-        System.out.println("MyUserDetailsService: "+findOne);
+        // System.out.println("MyUserDetailsService: "+findOne);
 
         MemVO member = findOne.orElseThrow(() -> new UsernameNotFoundException("없는 회원입니다 ㅠ"));
 

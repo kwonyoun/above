@@ -21,7 +21,7 @@ public class AuthorizationController {  //가입 controller
     //join.jsp에서 받아옴. 
     @PostMapping("/join")
     public ResponseEntity<String> join(@RequestBody MemVO vo) {
-        System.out.println("authoController: "+vo); //받아왔는지 확인
+        // System.out.println("authoController: "+vo); //받아왔는지 확인
 
         vo.setMemAddr(vo.getMemAddr1()+"/"+vo.getMemAddr2()+"/"+vo.getMemAddr3()+"/"+vo.getMemAddr4());
         vo.setMemBirth(vo.getMemBirth1()+"/"+vo.getMemBirth2()+"/"+vo.getMemBirth3());

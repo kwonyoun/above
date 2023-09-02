@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/css.css">
     <link rel="stylesheet" href="/css/cscenter_qna.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
-   <style type="text/css">
+   <!-- <style type="text/css">
       
       section .cscenter_menu_wrap .cscenter_menu:first-child, .cscenter_menu:nth-child(2) {
          background-color: #f6f6f6;
@@ -41,17 +41,17 @@
          border-left: 10px solid transparent;
       }
       
-   </style>  
+   </style>   -->
     
 </head>
 
 <body>
 
-   <jsp:include page="header.jsp" />
+   <jsp:include page="/header" />
 
 <section>
    
-   <div class="cscenter" >
+   <!-- <div class="cscenter" >
 
          <div class="cscenter_menu_wrap" >
          
@@ -84,7 +84,7 @@
             
             </div>
                      
-      </div>
+      </div> -->
 
       
 <!-- <form action="cscenter_qna_list_date.jsp"> -->
@@ -117,7 +117,7 @@
             <div class="board_list">
                 <div class="top">
                  <!-- <div class="num">번호</div> -->   
-                    <div class="num">카테고리</div>
+                    <div class="num">번호</div>
                     <div class="title">제목</div>
                     <div class="writer">질문자</div>
                     <div class="count">답변상황</div>

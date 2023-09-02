@@ -31,7 +31,7 @@ public class RegisterMemberService {    //멤버 등록 서비스
         //이게 회원가입 insert
         int ss = dao.insertJoin(member);
 
-        System.out.println("join: "+ss);
+        // System.out.println("join: "+ss);
 
         return ss;
     }
