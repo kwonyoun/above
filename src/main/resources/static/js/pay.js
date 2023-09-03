@@ -51,16 +51,16 @@ function requestPay() {
     var addr3 = document.getElementById("sample6_extraAddress").value;
     var buyer_addr = buyer_postcode+"/"+addr1+"/"+addr2+"/"+addr3;
     var prodprice = document.getElementById("prodprice").value;
-    var ordcnt = document.getElementById("ordcnt").value;
+    var ordQuan = document.getElementById("ordcnt").value;
     var prodname = document.getElementById("prodname").value;
     // alert(mem_id);
+    alert(ordQuan);
 
     IMP.request_pay({
         pg: "INIpayTest",
         pay_method: "card",
         merchant_uid : 'merchant_'+new Date().getTime(),
         name : prodname,
-        quan: ordcnt,
         amount : 100, 
         buyer_email : 'iamport@siot.do',
         buyer_name : buyer_name,
@@ -84,7 +84,8 @@ function requestPay() {
                 "buyerName" : data.buyer_name,
                 "buyerMobile" : data.buyer_tel,
                 "buyerAddr" : data.buyer_addr,
-                "memId" : mem_id
+                "memId" : mem_id,
+                "ordQuan" :ordQuan
             };
             
             $.ajax({

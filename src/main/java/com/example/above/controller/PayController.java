@@ -41,6 +41,7 @@ public class PayController {
         //test
         System.out.println("paySuccess");
         System.out.println(map.get("memId"));
+        System.out.println(map.get("ordQuan"));
         
         // String id = (String) session.getAttribute("Username");
         // map.put("memId", id);

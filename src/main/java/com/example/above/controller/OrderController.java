@@ -61,8 +61,8 @@ public class OrderController {
             model.addAttribute("message", "로그인이 필요합니다.");
             // return "login";
         } else {
-            System.out.println("prodNum: "+prodNum);
-        System.out.println("cnt: "+cnt);
+        //     System.out.println("prodNum: "+prodNum);
+        // System.out.println("cnt: "+cnt);
 
         MemVO memVO = svc.selectMeminfo(id);
 

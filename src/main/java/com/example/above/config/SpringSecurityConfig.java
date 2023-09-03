@@ -37,9 +37,12 @@ public class SpringSecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/status/**")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/header")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/signup")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/prod")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/prod/goods")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/cscenter/qnalist")).permitAll()
-                                .requestMatchers(new AntPathRequestMatcher("/cscenter/qna/write")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/cscenter/qnalist/page")).permitAll()
+                                // .requestMatchers(new AntPathRequestMatcher("/payInfo/{res}")).permitAll()
+                                // .requestMatchers(new AntPathRequestMatcher("/ordDetail")).permitAll()
                                 // view/admin에 접근하려면 roles의 ADMIN만 접근할 수 있다. 
                                 .requestMatchers(new AntPathRequestMatcher("/view/admin")).hasAnyRole("ADMIN") //이건 test
                                 .requestMatchers(new AntPathRequestMatcher("/view/setting/admin")).hasAnyRole("ADMIN")

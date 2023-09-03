@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="/css/pay.css">
 <link rel="stylesheet" type="text/css" href="/css/header_footer.css">
 </head>
-<jsp:include page="header.jsp"/>
+<jsp:include page="/header"/>
 
 <body>
 
@@ -48,7 +48,7 @@
 					<td>BS-200</td>
 					<td>DLBP-114</td>
 					<td class="text-center">${vo.paid_amount}원</td>
-					<td class="text-center">1</td>
+					<td class="text-center">${vo.ordQuan}</td>
 					<td class="text-right">${vo.paid_amount}원</td>
 				  </tr>
 				  <!-- <tr>

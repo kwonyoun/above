@@ -19,6 +19,7 @@ public class OrdinfoVO {
     private String ordDate;
     private String ordCard;
     private String ordProdNum;
+    private int ordQuan;
     
     private String prodImg;
 }
