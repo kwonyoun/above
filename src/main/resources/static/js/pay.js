@@ -53,13 +53,13 @@ function requestPay() {
     var prodprice = document.getElementById("prodprice").value;
     var ordcnt = document.getElementById("ordcnt").value;
     var prodname = document.getElementById("prodname").value;
-    alert(mem_id);
+    // alert(mem_id);
 
     IMP.request_pay({
         pg: "INIpayTest",
         pay_method: "card",
         merchant_uid : 'merchant_'+new Date().getTime(),
-        name : 'test: '+prodname,
+        name : prodname,
         quan: ordcnt,
         amount : 100, 
         buyer_email : 'iamport@siot.do',

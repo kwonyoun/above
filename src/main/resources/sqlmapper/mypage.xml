@@ -9,7 +9,11 @@
 	</select>
 
 	<select id="selectOrdinfo" resultType="com.example.above.vo.OrdinfoVO" >
-		SELECT * FROM ordinfo WHERE memId = #{memId} AND imp_uid = #{imp_uid}
+		SELECT ordinfo.*, prod.prodImg 
+		FROM ordinfo 
+		JOIN prod ON ordinfo.ordProdNum = prod.prodName
+		WHERE ordinfo.memId = #{memId} AND ordinfo.imp_uid = #{imp_uid}
+
 	</select>
 
 </mapper>

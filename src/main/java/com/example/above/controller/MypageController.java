@@ -34,8 +34,9 @@ public class MypageController {
     }
 
     @GetMapping("/ordDetail")
-    public String selectOrdDetail(Model model, HttpSession session, @RequestParam("num") String imp_uid ) {
-        String id = (String) session.getAttribute("id");
+    public String selectOrdDetail(Model model, @AuthenticationPrincipal UserDetails user, @RequestParam("num") String imp_uid ) {
+        // String id = (String) session.getAttribute("id");
+        String id = user.getUsername();
 
         HashMap<String, Object> map = new HashMap<>();
         map.put("memId", id);
