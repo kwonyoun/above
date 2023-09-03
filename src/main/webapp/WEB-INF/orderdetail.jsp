@@ -9,9 +9,9 @@
 <meta charset="UTF-8">
 <title>mypage</title>
 </head>
-<jsp:include page="header.jsp"/>
+<jsp:include page="/header"/>
 <body>
-<div style="width: 1080px; margin: 0 auto;" >
+<div style="width: 1080px; margin: 100px auto;" >
 
 	<!-- ${vo.ordProdNum} -->
 

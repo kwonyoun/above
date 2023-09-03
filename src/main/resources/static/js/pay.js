@@ -39,6 +39,7 @@
 
 function requestPay() {
     IMP.init('imp71853610'); //iamport 대신 자신의 "가맹점 식별코드"를 사용
+    var mem_id = document.getElementById("mem_id").value ;
     var buyer_name = document.getElementById("mem_name_input").value ;
     var tel1= document.getElementById("mem_mobile1_input").value;
     var tel2= document.getElementById("mem_mobile2_input").value;
@@ -52,6 +53,7 @@ function requestPay() {
     var prodprice = document.getElementById("prodprice").value;
     var ordcnt = document.getElementById("ordcnt").value;
     var prodname = document.getElementById("prodname").value;
+    alert(mem_id);
 
     IMP.request_pay({
         pg: "INIpayTest",
@@ -81,7 +83,8 @@ function requestPay() {
                 "buyerEmail" : data.buyer_email,
                 "buyerName" : data.buyer_name,
                 "buyerMobile" : data.buyer_tel,
-                "buyerAddr" : data.buyer_addr
+                "buyerAddr" : data.buyer_addr,
+                "memId" : mem_id
             };
             
             $.ajax({

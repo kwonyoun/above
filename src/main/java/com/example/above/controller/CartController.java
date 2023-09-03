@@ -28,8 +28,9 @@ public class CartController {
     CartService svc;
 
     @GetMapping("/cartInsert")
-    public String index(Model model, HttpSession session, @RequestParam("prodNum") int prodNum){
-        String id = (String) session.getAttribute("id");
+    public String index(Model model, @RequestParam("memid") String id, @RequestParam("prodNum") int prodNum){
+        // String id = (String) session.getAttribute("name");
+        System.out.println("session"+id);
         int cnt = 1;
         
         CartVO vo = new CartVO();
@@ -39,13 +40,13 @@ public class CartController {
 
         svc.insertCart(vo);
         
-    return "redirect:/cartList";
+    return "redirect:/cartList?memid="+id;
         
     }
 
     @GetMapping("/cartList")
-    public String cartlist(Model model, HttpSession session){
-        String id = (String) session.getAttribute("id");
+    public String cartlist(Model model, @RequestParam("memid") String id){
+        // String id = (String) session.getAttribute("id");
         ArrayList<ProdVO> cart = svc.selectCartList(id);
 
         // ModelAndView mav = new ModelAndView();

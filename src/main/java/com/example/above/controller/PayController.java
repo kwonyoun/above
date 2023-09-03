@@ -40,9 +40,10 @@ public class PayController {
 
         //test
         System.out.println("paySuccess");
+        System.out.println(map.get("mem_id"));
         
-        String id = (String) session.getAttribute("id");
-        map.put("memId", id);
+        // String id = (String) session.getAttribute("Username");
+        // map.put("memId", id);
 
         // 현재 날짜/시간
         LocalDateTime now = LocalDateTime.now();

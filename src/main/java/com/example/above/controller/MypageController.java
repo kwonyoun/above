@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,8 +23,10 @@ public class MypageController {
     MypageService svc;
 
     @GetMapping("/myPage")
-    public String index(HttpSession session,Model model){
-        String id = (String) session.getAttribute("id");
+    public String index(@AuthenticationPrincipal UserDetails user,Model model){
+        // String id = (String) session.getAttribute("name");
+        String id = user.getUsername();
+        System.out.println("mypage: "+id);
         ArrayList<String> ordlist = svc.selectOrdLIst(id);
         
         model.addAttribute("ordlist", ordlist);

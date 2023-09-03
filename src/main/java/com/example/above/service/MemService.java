@@ -16,7 +16,7 @@ public class MemService {
 
     //security
     public Optional<MemVO> findOne(String userId) {
-        System.out.println("MemberService:  "+userId);
+        // System.out.println("MemberService:  "+userId);
         return dao.findByUserid(userId);
     }
 

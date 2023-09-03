@@ -54,8 +54,8 @@ public class OrderController {
     // }  
 
     @GetMapping("/order")
-    public String selectOrdMem(Model model, HttpSession session, @RequestParam("prodNum") int prodNum,@RequestParam("cnt") int cnt ) {
-        String id = (String) session.getAttribute("id");
+    public String selectOrdMem(Model model, @RequestParam("memid") String id, @RequestParam("prodNum") int prodNum,@RequestParam("cnt") int cnt ) {
+        // String id = (String) session.getAttribute("id");
 
         if (id == null) {
             model.addAttribute("message", "로그인이 필요합니다.");

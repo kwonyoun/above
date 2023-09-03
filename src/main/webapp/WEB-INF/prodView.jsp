@@ -108,7 +108,7 @@
 							function sendOrder(prodNum) {
 								let quantityElement = document.getElementById("quantity");
 								let memid = document.getElementById("memid").value;
-								alert(memid);
+								// alert(memid);
 								let quantity = quantityElement.value;
 
 								window.location.href = "/order?prodNum="+prodNum+"&cnt="+quantity+"&memid="+memid;
@@ -119,7 +119,7 @@
 					<!-- <div class="sum">${vo.prodPrice}원</div> -->
 					<div id="button-wrap" style="margin-top: 20px;" >
 						<div class="buttons" >
-							<button><a href="/cartInsert?prodNum=${vo.prodNum}">add to bag</a></button>
+							<button><a href="/cartInsert?prodNum=${vo.prodNum}&memid=${pageContext.request.userPrincipal.name}">add to bag</a></button>
 							<a id="orderLink" onclick="sendOrder('${vo.prodNum}')" href="#" style="margin-left: 30px; font-size: 1.2em;" >order</a>
 		
 						</div>

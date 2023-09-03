@@ -8,9 +8,9 @@
 <head>
 <meta charset="UTF-8">
 <title>mypage</title>
-<link rel="stylesheet" type="text/css" href="css/mypage.css">
+<link rel="stylesheet" type="text/css" href="/css/mypage.css">
 </head>
-<jsp:include page="header.jsp"/>
+<jsp:include page="/header"/>
 <body>
 <div style="width: 800px; margin: 0 auto;" >
 

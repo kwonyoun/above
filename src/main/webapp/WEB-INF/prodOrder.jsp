@@ -161,7 +161,8 @@
 							<th>받는 분</th>
 							<td><input type="text" name="mem_name" id="mem_name_input"
 								value="${memVO.memName}"> <input type="checkbox" 
-								id="same_as_orderer" onchange="toggleInput()">주문자와 동일 
+								id="same_as_orderer" onchange="toggleInput()">주문자와 동일
+								<input type="hidden" name="mem_id" id="mem_id" value="${pageContext.request.userPrincipal.name}"/>
 							</td>
 						</tr>
 
