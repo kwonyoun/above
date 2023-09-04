@@ -34,15 +34,17 @@ public class MypageController {
     }
 
     @GetMapping("/ordDetail")
-    public String selectOrdDetail(Model model, @AuthenticationPrincipal UserDetails user, @RequestParam("num") String imp_uid ) {
+    public String selectOrdDetail(Model model, @AuthenticationPrincipal UserDetails user, @RequestParam("no") String imp_uid ) {
         // String id = (String) session.getAttribute("id");
         String id = user.getUsername();
-
+        System.out.println(imp_uid);
         HashMap<String, Object> map = new HashMap<>();
         map.put("memId", id);
         map.put("imp_uid", imp_uid);
 
         OrdinfoVO vo = svc.selectOrdinfo(map);
+        System.out.println(map);
+        System.out.println("vo: "+vo);
 
         model.addAttribute("vo", vo);
         return "orderdetail";

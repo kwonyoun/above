@@ -17,9 +17,11 @@ public class OrdinfoVO {
     private String buyerEmail;
     private String ordAsk;
     private String ordDate;
-    private String ordCard;
+    // private String ordCard;
     private String ordProdNum;
     private int ordQuan;
     
-    private String prodImg;
+    // private String prodImg;
+    //inner join으로 select하려고 OrdinfoVO에 string만들었는데 이거때문에 배열 오류났음.
+    //그러면 주문내역에서 prodImg는 어떻게 가져와야 될까?
 }

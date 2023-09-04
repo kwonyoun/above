@@ -42,7 +42,7 @@
 				<div id="order_list_wrap" >
 				
 					<div id="order_list_title" >
-						<h2>배송 상품</h2>
+						<h2 style="width: 80%; margin: 0 auto;">배송 상품</h2>
 					</div>
 					
 					<div id="order_list_con" >
@@ -85,11 +85,11 @@
 						
 				<div id="order_addr_wrap">
 					<div id="order_addr_title">
-						<h2>배송지 정보</h2>
+						<h2 style="width: 80%; margin: 0 auto;" >배송지 정보</h2>
 					</div>
 					<div id="order_addr_con">
 						<table class="shopping_addr_info">
-							<tr>
+							<!-- <tr>
 								<th>배송지선택</th>	
 								<td>
 									<label>
@@ -101,7 +101,7 @@
 					        value="">
 					        </option>
 
-				</select>
+				</select> -->
 				
 				<!-- <script>
 	            $(function(){
@@ -153,9 +153,9 @@
 				</script> -->
 				
 								
-								<label><input type="radio" id="new_addr" name="mem_addr">신규 배송지 설정</label>
+								<!-- <label><input type="radio" id="new_addr" name="mem_addr">신규 배송지 설정</label>
 							</td>
-						</tr>
+						</tr> -->
 
 						<tr>
 							<th>받는 분</th>
@@ -194,8 +194,8 @@
 								name="mem_addr4" id="sample6_extraAddress" placeholder="참고항목"
 								size="15" style="margin-top: 3px" value="${memVO.memAddr4}">
 								
-								<input type="button" id="save_button" onclick="newAddrInput()" value="신규 배송지 저장" >
-								<input type="text" id="addrName" value="" placeholder="배송지명 키워드를 입력해주세요." >
+								<!-- <input type="button" id="save_button" onclick="newAddrInput()" value="신규 배송지 저장" >
+								<input type="text" id="addrName" value="" placeholder="배송지명 키워드를 입력해주세요." > -->
 							</td>
 
 							<td></td>

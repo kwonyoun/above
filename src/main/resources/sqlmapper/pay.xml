@@ -4,10 +4,6 @@
 
 <mapper namespace="com.example.above.dao.PayDao">
 
-    <!-- <insert id="paySuccess" >
-        insert into pay values(default, ${paid_amount}, #{imp_uid} )
-    </insert> -->
-
     <insert id="paySuccess" >
         insert into ordinfo values(default, #{memId}, ${paid_amount} ,#{imp_uid}, #{buyerName}, #{buyerMobile}, #{buyerAddr},#{buyerEmail}, #{ordAsk}, #{ordDate}, #{ordProdNum}, #{ordQuan} )
     </insert>
