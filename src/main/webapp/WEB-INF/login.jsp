@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SpringBoot Index</title>
+<title>로그인</title>
 <link rel="stylesheet" type="text/css" href="/css/login.css">
 </head>
 

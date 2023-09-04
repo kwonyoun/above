@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpSession;
 @Configuration
 public class SpringSecurityConfig {
 
-    //비밀번호 암호화를 위한 것.
+        //비밀번호 암호화를 위한 것.
         @Bean
         PasswordEncoder passwordEncoder() {
                 return new BCryptPasswordEncoder(); 

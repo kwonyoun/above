@@ -29,13 +29,14 @@ public class MyUserDetailsService implements UserDetailsService{
 
     @Override
     public UserDetails loadUserByUsername(String insertedUserId) throws UsernameNotFoundException {
+        //로그인 form에서 submit하면 이곳으로 온다.
         //id로 정보 가져오기
         Optional<MemVO> findOne = memberService.findOne(insertedUserId);
         // System.out.println("MyUserDetailsService: "+findOne);
 
         MemVO member = findOne.orElseThrow(() -> new UsernameNotFoundException("없는 회원입니다 ㅠ"));
 
-        log.info("insertedUserId: "+insertedUserId);
+        log.info("insertedUserId: "+insertedUserId); //@Slf4j로 log 사용.
         return User.builder()
                 .username(member.getMemId()) //가져온 정보에서 userid
                 .password(member.getMemPw()) //가져온 정보에서 pw
