@@ -43,11 +43,12 @@ public class SpringSecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/cscenter/qna/view")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/cscenter/qna/write")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/cscenter/qnalist/page")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/order")).hasAnyRole("USER")
                                 // .requestMatchers(new AntPathRequestMatcher("/payInfo/{res}")).permitAll()
                                 // .requestMatchers(new AntPathRequestMatcher("/ordDetail")).permitAll()
                                 // view/admin에 접근하려면 roles의 ADMIN만 접근할 수 있다. 
                                 .requestMatchers(new AntPathRequestMatcher("/view/admin")).hasAnyRole("ADMIN") //이건 test
-                                .requestMatchers(new AntPathRequestMatcher("/view/setting/admin")).hasAnyRole("ADMIN")
+                                .requestMatchers(new AntPathRequestMatcher("/admin")).hasAnyRole("ADMIN")
                                 // view/admin에 접근하려면 roles의 USER만 접근할 수 있다. 
                                 //따로 config.UserAuthorize에서 설정을 해주면 이 곳에서 경로를 지정해주지 않아도 된다.
                                 //나는 그냥 여기로 경로 지정해줄거임.

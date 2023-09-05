@@ -18,8 +18,13 @@ public class LoginController {
     MemService memService;
 
     @GetMapping("/login")
-    public String loginmain() {
+    public String loginMain() {
         return "login";
+    }
+
+    @GetMapping("/admin")
+    public String loginAdmin() {
+        return "admin";
     }
 
     // @PostMapping("/login")
