@@ -5,11 +5,11 @@
 <mapper namespace="com.example.above.dao.PayDao">
 
     <insert id="paySuccess" >
-        insert into ordinfo values(default, #{memId}, ${paid_amount} ,#{imp_uid}, #{buyerName}, #{buyerMobile}, #{buyerAddr},#{buyerEmail}, #{ordAsk}, #{ordDate}, #{ordProdNum}, #{ordQuan} )
+        insert into ordinfo values(default, #{memId}, ${paidAmount} ,#{impUid}, #{buyerName}, #{buyerMobile}, #{buyerAddr},#{buyerEmail}, #{ordAsk}, #{ordDate}, #{ordProdNum}, #{ordQuan} )
     </insert>
 
     <select id="payInfoSelect" parameterType="String" resultType="com.example.above.vo.OrdinfoVO" >
-        select * from ordinfo where imp_uid = #{imp_uid}
+        select * from ordinfo where impUid = #{impUid}
     </select>
 
 </mapper>

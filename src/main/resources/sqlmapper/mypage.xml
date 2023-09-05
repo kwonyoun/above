@@ -5,14 +5,14 @@
 <mapper namespace="com.example.above.dao.MypageDao">
 
 	<select id="selectOrdLIst" parameterType="String" resultType="java.util.Map">
-		select imp_uid, ordDate from ordinfo WHERE memId = #{memId}
+		select impUid, ordDate from ordinfo WHERE memId = #{memId}
 	</select>
 
 	<select id="selectOrdinfo" resultType="com.example.above.vo.OrdinfoVO" >
 		SELECT ordinfo.*, prod.prodImg 
 		FROM ordinfo 
 		JOIN prod ON ordinfo.ordProdNum = prod.prodName
-		WHERE ordinfo.memId = #{memId} AND ordinfo.imp_uid = #{imp_uid}
+		WHERE ordinfo.memId = #{memId} AND ordinfo.impUid = #{impUid}
 
 	</select>
 

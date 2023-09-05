@@ -54,7 +54,7 @@
 					<c:forEach var="vo" items="${ordlist}" varStatus="status">
 						<tr>
 							<td><c:out value="${status.count}" /></td>
-							<td><a href="/ordDetail?no=${vo.imp_uid}">${vo.imp_uid}</a></td>
+							<td><a href="/ordDetail?no=${vo.impUid}">${vo.impUid}</a></td>
 							<td>${vo.ordDate}</td>
 						</tr>
 					</c:forEach>

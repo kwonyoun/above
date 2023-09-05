@@ -51,13 +51,15 @@ public class PayController {
         String ordDate = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         
         map.put("ordDate", ordDate);
+        map.put("paidAmount", map.get("paid_amount"));
+        map.put("impUid", map.get("imp_uid"));
 
         String ordProdNum = map.get("ordProdNum").toString();
         System.out.println("name:"+ordProdNum);
 
         //return값으로 고유 uid를 반환하기
         //예시
-        String imp_uid = map.get("imp_uid").toString();
+        String impUid = map.get("imp_uid").toString();
         String paid_amount = map.get("paid_amount").toString();
         String buyerEmail = map.get("buyerEmail").toString();
         String buyerName = map.get("buyerName").toString();
@@ -67,7 +69,7 @@ public class PayController {
         System.out.println(map);
         svc.paySuccess(map);
 
-        return imp_uid;
+        return impUid;
 	}
 
     @GetMapping("/payInfo/{res}")

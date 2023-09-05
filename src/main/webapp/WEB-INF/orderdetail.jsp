@@ -56,7 +56,7 @@
 														<a class="sc-gnmni8-10 sc-8q24ha-5 yma-DD iDQVMP">
 															<div class="sc-8q24ha-3 gFbjJh">
 																<div class="sc-uaa4l4-0 jxRaeI">
-																	<span font-weight="normal" class="sc-755zt3-0 kftgZM">가격: ${vo.paid_amount}원</span>
+																	<span font-weight="normal" class="sc-755zt3-0 kftgZM">가격: ${vo.paidAmount}원</span>
 																	<span class="sc-13xhsmd-0 kYtEGM"><span class="sc-13xhsmd-1 joIhoV"></span>
 																<!-- </span><span class="sc-755zt3-0 jtWNEg">1 개</span> -->
 															</div>

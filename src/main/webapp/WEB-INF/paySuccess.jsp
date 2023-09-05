@@ -16,7 +16,7 @@
 		<p style="margin: 50px 0; text-align: center; font-size: 1.5em; " >결제가 완료되었습니다.</p>
 	
 	    <div class="paycontent" style="margin: 0 auto; text-align: center; margin-bottom: 50px; " >
-        결제금액: ${vo.paid_amount}
+        결제금액: ${vo.paidAmount}
 		주소: ${vo.buyerAddr}
 		번호: ${vo.buyerMobile}
 		이름: ${vo.buyerName}
@@ -47,9 +47,9 @@
 				  <tr>
 					<td>BS-200</td>
 					<td>DLBP-114</td>
-					<td class="text-center">${vo.paid_amount}원</td>
+					<td class="text-center">${vo.paidAmount}원</td>
 					<td class="text-center">${vo.ordQuan}</td>
-					<td class="text-right">${vo.paid_amount}원</td>
+					<td class="text-right">${vo.paidAmount}원</td>
 				  </tr>
 				  <!-- <tr>
 					<td>BS-200</td>
@@ -70,7 +70,7 @@
 					<td class="thick-line"></td>
 					<td class="thick-line"></td>
 					<td class="thick-line text-center"><strong>합계</strong></td>
-					<td class="thick-line text-right">${vo.paid_amount}원</td>
+					<td class="thick-line text-right">${vo.paidAmount}원</td>
 				  </tr>
 				 
 				</tbody>
@@ -89,7 +89,7 @@
 				<tbody>
 				  <tr>
 					<td class="text-center gr"><strong>주문번호</strong></td>
-					<td>${vo.imp_uid}</td>
+					<td>${vo.impUid}</td>
 					<td class="text-center gr"><strong>주문일</strong></td>
 					<td>${vo.ordDate}</td>
 				  </tr>
@@ -99,7 +99,7 @@
 				  </tr>
 				  <tr>
 					<td class="text-center gr"><strong>결제금액</strong></td>
-					<td>${vo.paid_amount}원</td>
+					<td>${vo.paidAmount}원</td>
 					<td class="text-center gr"><strong>결제상태</strong></td>
 					<td>결제완료</td>
 				  </tr>
@@ -144,6 +144,6 @@
 	  
 
 </body>
-<jsp:include page="footer.jsp" />
+<jsp:include page="/footer" />
 </html>
 

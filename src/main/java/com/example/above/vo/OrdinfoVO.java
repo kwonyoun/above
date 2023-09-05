@@ -13,8 +13,8 @@ public class OrdinfoVO {
 
     private int ordNum;
     private String memId;
-    private int paid_amount;
-    private String imp_uid;
+    private int paidAmount;
+    private String impUid;
     private String buyerName;
     private String buyerMobile;
     private String buyerAddr;

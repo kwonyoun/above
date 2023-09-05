@@ -40,7 +40,7 @@ public class MypageController {
         System.out.println(imp_uid);
         HashMap<String, Object> map = new HashMap<>();
         map.put("memId", id);
-        map.put("imp_uid", imp_uid);
+        map.put("impUid", imp_uid);
 
         OrdinfoVO vo = svc.selectOrdinfo(map);
         System.out.println(map);
