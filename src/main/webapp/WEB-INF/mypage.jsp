@@ -12,7 +12,7 @@
 </head>
 <jsp:include page="/header"/>
 <body>
-<div style="width: 800px; margin: 0 auto;" >
+<div style="width: 723px; margin: 0 auto;" >
 
 	<!-- <c:forEach var="vo" items="${ordlist}" varStatus="status">
 		<div style="margin: 10px 10px; width: 50px; height: 50px;" >
@@ -31,7 +31,7 @@
 		
 		</div>
 	</c:forEach> -->
-	<div style="width: 800px;" ><p style="text-align: center; font-size: 1.5em;" >주문 내역 확인하기</p></div>
+	<div style="width: 723px;" ><p style="text-align: center; font-size: 1.5em;" >주문 내역 확인하기</p></div>
 	<div class="scroll-table">
 		<div>
 			
