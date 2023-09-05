@@ -40,6 +40,8 @@ public class SpringSecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/prod")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/prod/goods")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/cscenter/qnalist")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/cscenter/qna/view")).permitAll()
+                                .requestMatchers(new AntPathRequestMatcher("/cscenter/qna/write")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/cscenter/qnalist/page")).permitAll()
                                 // .requestMatchers(new AntPathRequestMatcher("/payInfo/{res}")).permitAll()
                                 // .requestMatchers(new AntPathRequestMatcher("/ordDetail")).permitAll()

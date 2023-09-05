@@ -20,7 +20,7 @@
 
  <jsp:include page="header.jsp" />
 
- <c:if test="${vo.qnaOpen == 'private'}">
+ <c:if test="${vo.qnaOpen == 'private' and pageContext.request.userPrincipal.name != vo.qnaMemId}">
     <script>
         alert('비공개 문의입니다.');
         history.go(-1);
