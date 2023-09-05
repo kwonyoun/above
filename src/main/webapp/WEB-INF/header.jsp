@@ -33,10 +33,9 @@
          <c:if test="${pageContext.request.userPrincipal.name == null}" >
          <div id="header-right" >
             <ul>
+               <li><a href="/admin" class="nav-link px-2 link-dark">관리자 페이지</a></li>
                <li><a href="/login">로그인</a></li>
-               <li><form class="form-signin" method="get" action="/signup">
-                  <button class="btn btn-lg btn-warning btn-block" type="submit">회원가입</button>
-               </form></li>
+               <li><a href="/signup">회원가입</li>
                <li><a href="/cscenter/qnalist">Q&A</a></li>
             </ul>
          </div>
@@ -46,9 +45,9 @@
          <div id="header-right" >
             <ul>
                
-               <sec:authorize access="hasRole('ADMIN')">
+               <!-- <sec:authorize access="hasRole('ADMIN')">
 			         <li><a href="/admin" class="nav-link px-2 link-dark">관리자 페이지</a></li>
-		         </sec:authorize>
+		         </sec:authorize> -->
                <sec:authorize access="hasRole('USER')">
                   <li><a href="/myPage">${pageContext.request.userPrincipal.name}의 주문내역 확인</a></li>
                </sec:authorize>

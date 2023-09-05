@@ -3,18 +3,25 @@ package com.example.above.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
 import jakarta.servlet.DispatcherType;
 import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
 
+@EnableWebSecurity
+@RequiredArgsConstructor
 @Configuration
 public class SpringSecurityConfig {
+
+        private final AccessDeniedHandler accessDeniedHandler;
 
         //비밀번호 암호화를 위한 것.
         @Bean
@@ -56,6 +63,8 @@ public class SpringSecurityConfig {
                                 .requestMatchers(new AntPathRequestMatcher("/auth/join")).permitAll()
                                 .anyRequest().authenticated()	// 어떠한 요청이라도 인증필요
                         )
+                        .exceptionHandling(exceptionHandlingConfigurer -> exceptionHandlingConfigurer.accessDeniedHandler(accessDeniedHandler))
+
                         .formLogin(login -> login
                         .loginPage("/")	// [A] 커스텀 로그인 페이지 지정
                         .failureUrl("/test") // 로그인 실패 후 이동 페이지
