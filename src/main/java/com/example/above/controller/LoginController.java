@@ -24,6 +24,7 @@ public class LoginController {
 
     @GetMapping("/admin")
     public String loginAdmin() {
+        System.out.println("admin");
         return "admin";
     }
 

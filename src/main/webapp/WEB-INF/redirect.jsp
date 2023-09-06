@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-        <script th:inline="javascript">
-        
-            window.onload = function() {
-                let nextPage = [[${nextPage}]]
-                let msg = [[${msg}]];
-        
-                alert(msg);
-                location.href = nextPage;
-            }
-        
-        
-        </script>
+    <script type="text/javascript">
+        window.onload = function(){
+        alert("권한이 없는 사용자입니다.");
+            location.href = "/";
+        };
+    </script>
     
 </body>
 </html>

@@ -48,6 +48,7 @@
                <!-- <sec:authorize access="hasRole('ADMIN')">
 			         <li><a href="/admin" class="nav-link px-2 link-dark">관리자 페이지</a></li>
 		         </sec:authorize> -->
+               <li><a href="/admin" class="nav-link px-2 link-dark">관리자 페이지</a></li>
                <sec:authorize access="hasRole('USER')">
                   <li><a href="/myPage">${pageContext.request.userPrincipal.name}의 주문내역 확인</a></li>
                </sec:authorize>
