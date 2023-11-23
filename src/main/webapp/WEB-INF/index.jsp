@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -19,18 +18,9 @@
 </head>
 
 
-<!-- <Script language="JavaScript">
-	window.open('URL', 'Name', 'Width=0, Height=0, Top=0, Left=0, Toolbar=yes, Menubar=yes, Statusbar=yes, Scrollbar=yes, Resizable=yes');
-	</Script> -->
-
 <body>
 	<jsp:include page="/header"/>
 	<div style="width: 1080px; margin: 0 auto; display: flex; margin-top: 20px; justify-content: space-between; " >
-		<!-- <div>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/G5Xg_frrEks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-		</div> -->
-		<!-- <div><p style="font-size: 1.2em;" >USER</p><br><p>아이디: ff<br>비밀번호: ff</p></div><br>
-		<div><p style="font-size: 1.2em;" >ADMIN</p><br><p>아이디: dd<br>비밀번호: dd</p></div><br> -->
 	</div>
 
 <div id="wrap">

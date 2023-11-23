@@ -12,7 +12,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.example.above.security.AccessDeniedHandlerImpl;
-import com.example.above.security.RestAuthenticationEntryPoint;
+// import com.example.above.security.RestAuthenticationEntryPoint;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -55,7 +55,7 @@ public class SpringSecurityConfig {
                 //접근 권한 처리
                 http.exceptionHandling( (exceptionHandling) -> exceptionHandling
                         .accessDeniedHandler(accessDeniedHandler()) //인증되었지만 권한이 없는 유저 처리
-                        .authenticationEntryPoint(authenticationEntryPoint()) //인증되지 않은 유저 처리
+                        // .authenticationEntryPoint(authenticationEntryPoint()) //인증되지 않은 유저 처리
                 );
                 http.authorizeHttpRequests(request -> request
                         .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
@@ -106,9 +106,9 @@ public class SpringSecurityConfig {
                 return new AccessDeniedHandlerImpl();
         }
 
-        private AuthenticationEntryPoint authenticationEntryPoint() {
-                return new RestAuthenticationEntryPoint();
-        }
+        // private AuthenticationEntryPoint authenticationEntryPoint() {
+        //         return new RestAuthenticationEntryPoint();
+        // }
 
         
     

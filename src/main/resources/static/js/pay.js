@@ -61,7 +61,7 @@ function requestPay() {
         pay_method: "card",
         merchant_uid : 'merchant_'+new Date().getTime(),
         name : prodname,
-        amount : 100, 
+        amount : prodprice, 
         buyer_email : 'iamport@siot.do',
         buyer_name : buyer_name,
         buyer_tel : buyer_tel,

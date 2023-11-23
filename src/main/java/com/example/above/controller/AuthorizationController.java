@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/auth")
 public class AuthorizationController {  //가입 controller
 
-    //생성자 주입
-    private final RegisterMemberService registerMemberService;
-    public AuthorizationController(RegisterMemberService registerMemberService) {
-        this.registerMemberService = registerMemberService;
-    }
+        //생성자 주입
+        private final RegisterMemberService registerMemberService;
+        public AuthorizationController(RegisterMemberService registerMemberService) {
+            this.registerMemberService = registerMemberService;
+        }
 
     //join.jsp에서 받아옴. 
     @PostMapping("/join")
